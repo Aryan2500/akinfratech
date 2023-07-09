@@ -42,7 +42,6 @@
                              <option value="">UK</option>
                          </select>
 
-
                      </div>
 
                  </li>
@@ -51,24 +50,19 @@
                  <li class="dropdown user">
                      <a class="dropdown-toggle text-decoration-none" href="#" role="button"
                          data-bs-toggle="dropdown" aria-expanded="false" title="User">
-                         <img class="avatar sm rounded-circle shadow border border-2" src="assets/img/profile_av.png"
-                             alt="avatar">
-                         <span class="ps-1 fs-6 text-white d-none d-lg-inline-block">Brian</span>
+                         <img class="avatar sm rounded-circle shadow border border-2"
+                             src="{{ asset('assets/img/profile_av.png') }}" alt="avatar">
+                         <span class="ps-1 fs-6 text-white d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
                      </a>
                      <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-4 rounded-4">
                          <li class="mb-3">
-                             <a class="h5" href="crafted-profile.html" title="">Brian Hughes</a>
-                             <p>brian.hughes@example.com</p>
-                             <a class="btn bg-dark text-white w-100" href="auth-signin.html" role="button">Logout</a>
+                             <a class="h5" href="crafted-profile.html" title="">{{ Auth::user()->name }}</a>
+                             <p>{{ Auth::user()->email }}</p>
+                             <a class="btn bg-dark text-white w-100" href="{{ route('logout') }}"
+                                 role="button">Logout</a>
                          </li>
                          <li class="dropdown-divider"></li>
-                         <li><a class="dropdown-item" href="crafted-profile.html">My Profile</a></li>
-                         <li><a class="dropdown-item" href="app-chat.html">Messages</a></li>
-                         <li><a class="dropdown-item" href="my-task.html">My Taskboard</a></li>
-                         <li class="dropdown-divider"></li>
-                         <li><a class="dropdown-item" href="my-wallet.html"><span class="align-middle">Balance:
-                                     <b>$1399.33</b></span></a></li>
-
+                         {{-- <li><a class="dropdown-item" href="crafted-profile.html">My Profile</a></li> --}}
                      </ul>
                  </li>
 

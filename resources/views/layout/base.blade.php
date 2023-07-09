@@ -11,11 +11,11 @@
     <!--[ Favicon]-->
     <title>Ak infratech :: Dashboard</title>
     <!--[ plugin css file  ]-->
-    <link rel="stylesheet" href="assets/bundles/bootstrapdatepicker.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/bundles/bootstrapdatepicker.min.css') }}">
     <!--[ project css file  ]-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!--[ Jquery Core Js ]-->
-    <script src="assets/js/plugins.js"></script>
+    <script src="{{ asset('assets/js/plugins.js') }}"></script>
 
     @yield('page_css')
 </head>
@@ -37,7 +37,13 @@
 
     @include('partials.site-background')
     <!--[ Jquery Page Js ]-->
-    <script src="assets/js/theme.js"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+    <script src="{{ asset('assets/js/login-form-validator.js') }}"></script>
+
     <!--[ Chart plugin url ]-->
 
     @stack('scripts')
