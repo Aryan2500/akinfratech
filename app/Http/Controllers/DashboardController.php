@@ -8,8 +8,8 @@ class DashboardController extends Controller
 {
     //
     function index()
-
     {
-        return view('pages.dashboard');
+        $page_heading = 'Dashboard';
+        return view('pages.admin.dashboard' , compact('page_heading'));
     }
 }

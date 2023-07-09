@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use App\Models\Usertype;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +19,8 @@ return new class extends Migration
             $t->string('email')->unique();
             $t->timestamp('email_verified_at')->nullable();
             $t->string('password');
-            $t->enum('user_type', USER_TYPES)->default(ADMIN);
+            $t->foreignIdFor(Usertype::class);
+            $t->foreignId('parent_id')->default(1);
             $t->rememberToken();
             $t->timestamps();
         });

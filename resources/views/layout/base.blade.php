@@ -15,6 +15,7 @@
     <!--[ project css file  ]-->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!--[ Jquery Core Js ]-->
+    <link rel="stylesheet" href="{{ asset('assets/css/mycss.css') }}">
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
 
     @yield('page_css')
@@ -30,7 +31,12 @@
 
         @include('partials.greeting')
 
-        @yield('main_section')
+        <main class="page-body">
+            <div class="container-fluid">
+                @yield('main_section')
+            </div>
+        </main>
+
 
         @include('partials.footer')
     </div>
