@@ -41,7 +41,7 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <h2 class="text-accent fw-bold display-6 mb-3">Kick<br> Start your<br> Project.</h2>
-                                    <p class="lead text-dark">Multipurpose fast & light-weight admin template</p>
+                                    <p class="lead text-dark"></p>
                                 </div>
                                 <div class="carousel-item">
                                     <h2 class="text-accent fw-bold display-6 mb-3"> </h2>
@@ -83,7 +83,7 @@
                                     <div class="mb-2">
                                         <label class="form-label">Email address</label>
                                         <input type="email" name="email" class="form-control form-control-lg"
-                                            placeholder="name@example.com">
+                                            placeholder="name@example.com" value="{{ old('email') }}">
                                     </div>
                                 </li>
                                 <li class="col-12">
