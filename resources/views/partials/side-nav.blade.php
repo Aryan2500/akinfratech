@@ -47,7 +47,7 @@
                 </li>
                 <!--[ Start:: Account ]-->
                 <li>
-                    <a class="m-link {{ request()->is('admin/user-management') ? 'active' : '' }}"
+                    <a class="m-link {{ request()->is('admin/user-management/*') ? 'active' : '' }}"
                         href="{{ route('user.list') }}">
                         <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path opacity="0.7"
