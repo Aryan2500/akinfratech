@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Permissioncategory;
 use App\Models\Usertype;
 use Illuminate\Database\Seeder;
 
@@ -24,7 +25,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsertypeSeeder::class,
             AdminSeeder::class,
-
+            RoleSeeder::class,
+            PermissioncategorySeeder::class,
+            PermisssionSeeder::class,
         ]);
     }
 }

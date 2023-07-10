@@ -19,7 +19,8 @@ class AdminSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@akinfratech.com',
             'password' => Hash::make('admin@akinfratech.com'),
-            'usertype_id' => 1
+            'usertype_id' => 1,
+            'role_id' => 1
         ]);
     }
 }

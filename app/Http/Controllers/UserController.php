@@ -10,14 +10,10 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     //
-
-
     public function  index()
     {
         $page_heading  = 'Users';
-
         $users = User::orderBy('created_at', 'ASC')->get();
-        // dd($users);
         return view('pages.admin.user.list', compact('page_heading', 'users'));
     }
     public function  create()
@@ -41,6 +37,9 @@ class UserController extends Controller
         } catch (\Throwable $th) {
             return redirect()->route('user.list')->with('error', 'something went wrong');
         }
+    }
+    public function edit()
+    {
     }
     public function update()
     {

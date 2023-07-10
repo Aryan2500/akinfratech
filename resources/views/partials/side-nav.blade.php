@@ -46,9 +46,9 @@
                     </ul>
                 </li>
                 <!--[ Start:: Account ]-->
-                <li>
+                <li class="collapsed">
                     <a class="m-link {{ request()->is('admin/user-management*') ? 'active' : '' }}"
-                        href="{{ route('user.list') }}">
+                        data-bs-toggle="collapse" data-bs-target="#menu_apps" href="#">
                         <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path opacity="0.7"
                                 d="M6 8C6.79565 8 7.55871 7.68393 8.12132 7.12132C8.68393 6.55871 9 5.79565 9 5C9 4.20435 8.68393 3.44129 8.12132 2.87868C7.55871 2.31607 6.79565 2 6 2C5.20435 2 4.44129 2.31607 3.87868 2.87868C3.31607 3.44129 3 4.20435 3 5C3 5.79565 3.31607 6.55871 3.87868 7.12132C4.44129 7.68393 5.20435 8 6 8ZM1 14C1 14 0 14 0 13C0 12 1 9 6 9C11 9 12 12 12 13C12 14 11 14 11 14H1Z" />
@@ -62,7 +62,17 @@
                                 d="M13.1464 12.1464C13.2402 12.0527 13.3674 12 13.5 12H15.5C15.6326 12 15.7598 12.0527 15.8536 12.1464C15.9473 12.2402 16 12.3674 16 12.5C16 12.6326 15.9473 12.7598 15.8536 12.8536C15.7598 12.9473 15.6326 13 15.5 13H13.5C13.3674 13 13.2402 12.9473 13.1464 12.8536C13.0527 12.7598 13 12.6326 13 12.5C13 12.3674 13.0527 12.2402 13.1464 12.1464Z" />
                         </svg>
                         <span class="mx-3">User Management</span>
+                        <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                     </a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="menu_apps">
+                        <li><a class="ms-link {{ request()->is('admin/user-management/user*') ? 'active' : '' }}" href="{{ route('user.list') }}">Users</a></li>
+                        <li><a class="ms-link {{ request()->is('admin/user-management/role*') ? 'active' : '' }}" href="{{ route('role.list') }}">Roles</a></li>
+                        {{-- <li><a class="ms-link" href="app-chat.html">Chat app</a></li>
+                        <li><a class="ms-link" href="app-contacts.html">Contacts</a></li>
+                        <li><a class="ms-link" href="app-filemanager.html">File Manager</a></li>
+                        <li><a class="ms-link" href="app-invoice.html">Invoice</a></li> --}}
+                    </ul>
                 </li>
                 {{-- <li class="collapsed">
                     <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu_apps" href="#">
