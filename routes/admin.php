@@ -4,7 +4,9 @@
 
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PlotController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +34,26 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::get('/edit/{id}', [RoleController::class, 'edit'])->name('role.edit');
             Route::post('/update', [RoleController::class, 'update'])->name('role.update');
             Route::post('/lock', [RoleController::class, 'lock'])->name('role.lock');
+        });
+    });
+    Route::group(['prefix' => 'property-management'], function () {
+
+        Route::group(['prefix' => 'site'], function () {
+            Route::get('/', [SiteController::class, 'index'])->name('site.list');
+            Route::get('/create', [SiteController::class, 'create'])->name('site.create');
+            Route::post('/save', [SiteController::class, 'store'])->name('site.store');
+            Route::get('/edit', [SiteController::class, 'edit'])->name('site.edit');
+            Route::post('/update', [SiteController::class, 'update'])->name('site.update');
+            // Route::get('/lock', [SiteController::class, 'lock'])->name('site.lock');
+        });
+
+        Route::group(['prefix' => 'plot'], function () {
+            Route::get('/', [PlotController::class, 'index'])->name('plot.list');
+            Route::get('/create', [PlotController::class, 'create'])->name('plot.create');
+            Route::post('/store', [PlotController::class, 'store'])->name('plot.store');
+            Route::get('/edit/{id}', [PlotController::class, 'edit'])->name('plot.edit');
+            Route::post('/update', [PlotController::class, 'update'])->name('plot.update');
+            // Route::post('/lock', [PlotController::class, 'lock'])->name('plot.lock');
         });
     });
 });

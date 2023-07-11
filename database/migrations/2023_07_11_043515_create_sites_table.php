@@ -1,8 +1,6 @@
 <?php
 
-use App\Models\Role;
 use App\Models\User;
-use App\Models\Usertype;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,15 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $t) {
+        Schema::create('sites', function (Blueprint $t) {
             $t->id();
             $t->string('name');
-            $t->string('email')->unique();
-            $t->timestamp('email_verified_at')->nullable();
-            $t->string('password');
-            $t->foreignIdFor(Usertype::class);
-            $t->foreignId('parent_id')->default(1);
-            $t->rememberToken();
+            $t->text('address');
+            $t->integer('total_size');
+            $t->integer('remaining_size')->nullable();
+            $t->foreignIdFor(User::class)->comment('creator Id');
+            $t->foreignId('sitehead_id')->comment('this is a user id who is a head of this site');
             $t->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('sites');
     }
 };

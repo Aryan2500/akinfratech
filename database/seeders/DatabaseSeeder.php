@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             PermissioncategorySeeder::class,
             PermisssionSeeder::class,
+            SiteSeeder::class,
+            PlotSeeder::class
         ]);
     }
 }

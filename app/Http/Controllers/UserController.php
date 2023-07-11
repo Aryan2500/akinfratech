@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -34,8 +35,8 @@ class UserController extends Controller
                 'usertype_id' => $req->user_type,
             ]);
             return redirect()->route('user.list')->with('success', 'User created successfully');
-        } catch (\Throwable $th) {
-            return redirect()->route('user.list')->with('error', 'something went wrong');
+        } catch (QueryException $th) {
+            return redirect()->route('user.list')->with('error', 'something went wrong'.$th->getMessage());
         }
     }
     public function edit()
