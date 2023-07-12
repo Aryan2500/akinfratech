@@ -39,7 +39,8 @@
                         <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                     </a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse show" id="menu_dashboard">
+                    <ul class="sub-menu collapse  {{ request()->is('admin/dashboard') ? 'show' : '' }}"
+                        id="menu_dashboard">
                         <li><a class="ms-link {{ request()->is('admin/dashboard') ? 'active' : '' }}"
                                 href="{{ route('dashboard') }}">My
                                 Dashboard</a></li>
@@ -65,7 +66,8 @@
                         <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                     </a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse" id="menu_apps">
+                    <ul class="sub-menu collapse {{ request()->is('admin/user-management*') ? 'show' : '' }}"
+                        id="menu_apps">
                         <li><a class="ms-link {{ request()->is('admin/user-management/user*') ? 'active' : '' }}"
                                 href="{{ route('user.list') }}">Users</a></li>
                         <li><a class="ms-link {{ request()->is('admin/user-management/role*') ? 'active' : '' }}"
@@ -88,9 +90,12 @@
                         <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                     </a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse" id="properyMenu">
+                    <ul class="sub-menu collapse {{ request()->is('admin/property-management*') ? 'show' : '' }}"
+                        id="properyMenu">
                         <li><a class="ms-link {{ request()->is('admin/property-management/site*') ? 'active' : '' }}"
                                 href="{{ route('site.list') }}">Site</a></li>
+                        <li><a class="ms-link {{ request()->is('admin/property-management/ptype*') ? 'active' : '' }}"
+                                href="{{ route('plottype.list') }}">Plot Type</a></li>
                         <li><a class="ms-link {{ request()->is('admin/property-management/plot*') ? 'active' : '' }}"
                                 href="{{ route('plot.list') }}">Plot</a></li>
                         {{-- <li><a class="ms-link" href="app-chat.html">Chat app</a></li>

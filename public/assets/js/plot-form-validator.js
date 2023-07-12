@@ -6,7 +6,7 @@ $(document).ready(function () {
             },
             size: {
                 required: true,
-                
+
             },
             address: {
                 required: true,
@@ -15,6 +15,9 @@ $(document).ready(function () {
                 required: true,
             },
             site_id: {
+                required: true,
+            },
+            plottype_id: {
                 required: true,
             },
         },
@@ -34,6 +37,9 @@ $(document).ready(function () {
             },
             site_id: {
                 required: "Please select site",
+            },
+            plottype_id: {
+                required: "Please select plot type",
             }
         },
         submitHandler: function (form) {

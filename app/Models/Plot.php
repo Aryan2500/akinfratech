@@ -15,4 +15,9 @@ class Plot extends Model
     {
         return $this->belongsTo(Site::class);
     }
+
+    public function plotType()
+    {
+        return $this->belongsTo(Plottype::class ,'plottype_id');
+    }
 }

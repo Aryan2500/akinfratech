@@ -5,6 +5,7 @@
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PlotController;
+use App\Http\Controllers\PlottypeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
@@ -44,6 +45,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::post('/save', [SiteController::class, 'store'])->name('site.store');
             Route::get('/edit', [SiteController::class, 'edit'])->name('site.edit');
             Route::post('/update', [SiteController::class, 'update'])->name('site.update');
+            // Route::get('/lock', [SiteController::class, 'lock'])->name('site.lock');
+        });
+        Route::group(['prefix' => 'ptype'], function () {
+            Route::get('/', [PlottypeController::class, 'index'])->name('plottype.list');
+            Route::get('/create', [PlottypeController::class, 'create'])->name('plottype.create');
+            Route::post('/save', [PlottypeController::class, 'store'])->name('plottype.store');
+            Route::get('/edit', [PlottypeController::class, 'edit'])->name('plottype.edit');
+            Route::post('/update', [PlottypeController::class, 'update'])->name('plottype.update');
             // Route::get('/lock', [SiteController::class, 'lock'])->name('site.lock');
         });
 

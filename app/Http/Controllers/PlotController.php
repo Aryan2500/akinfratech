@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plot;
+use App\Models\Plottype;
 use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,17 +22,19 @@ class PlotController extends Controller
     {
         $page_heading = 'Create plot';
         $sites = Site::all();
+        $plottypes = Plottype::all();
         // dd($site_heads[0]->type);
-        return view('pages.admin.plot.create', compact('page_heading', 'sites'));
+        return view('pages.admin.plot.create', compact('page_heading', 'sites', 'plottypes'));
     }
     public function store(Request $req)
-    {   
+    {
         // dd($req->all());
         $plot = Plot::create([
             'name' => $req->name,
             'address' => $req->address,
             'price' => $req->price,
             'size' => $req->size,
+            'plottype_id' => $req->plottype_id,
             'user_id' => Auth::user()->id,
             'site_id' => $req->site_id
         ]);

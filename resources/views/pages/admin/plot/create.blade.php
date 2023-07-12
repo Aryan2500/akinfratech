@@ -50,6 +50,17 @@
                             <span>Site</span>
                         </label>
                     </div>
+                    <div class="col-6 mt-2">
+                        <label class="form-group float-label">
+                            <select class="form-control form-control-lg custom-select" name="plottype_id">
+                                <option value="">Choose Plot type </option>
+                                @foreach ($plottypes as $ptype)
+                                    <option value="{{ $ptype->id }}">{{ $ptype->name }}</option>
+                                @endforeach
+                            </select>
+                            <span>Plot type</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="col-2">

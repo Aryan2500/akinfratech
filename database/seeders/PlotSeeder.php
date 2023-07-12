@@ -21,6 +21,7 @@ class PlotSeeder extends Seeder
                 'address' => 'Address' . $i,
                 'size' => '200sq feet',
                 'price' => '20000',
+                'plottype_id' => random_int(1, 3),
                 'site_id' => random_int(1, 5),
                 'user_id' => 1,
             ]);

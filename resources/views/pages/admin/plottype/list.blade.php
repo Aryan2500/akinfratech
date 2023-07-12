@@ -9,31 +9,22 @@
         @include('partials.alerts')
         <div class="card mb-4">
             <div class="card-header">
-                <h6 class="card-title mb-0">Plot's list</h6>
-                <a type="button" href="{{ route('plot.create') }}" class="btn btn-outline-primary float-end ">Create plot</a>
+                <h6 class="card-title mb-0">Plot type list</h6>
+                <a type="button" href="{{ route('plottype.create') }}" class="btn btn-outline-primary float-end ">Create Plot
+                    type</a>
             </div>
             <div class="card-body">
-                <table class="my_data_table table display dataTable table-hover">
+                <table class="my_data_table table display dataTable table-hover" style="text-align: center">
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Address</th>
-                            <th>Size</th>
-                            <th>Site</th>
-                            <th>Plot Type</th>
-                            <th>Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($plots as $plot)
+                        @foreach ($plottypes as $type)
                             <tr>
-                                <td>{{ $plot->name }}</td>
-                                <td>{{ $plot->address }}</td>
-                                <td>{{ $plot->size }} </td>
-                                <td>{{ $plot->site->name }} </td>
-                                <td>{{ $plot->plotType ? $plot->plotType->name : '' }} </td>
-                                <td>{{ $plot->price }} </td>
+                                <td>{{ $type->name }}</td>
 
                                 <td>
                                     <button class="btn btn-primary">Edit</button>
