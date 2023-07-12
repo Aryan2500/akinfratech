@@ -20,6 +20,7 @@
                             <th>Address</th>
                             <th>Size</th>
                             <th>Site</th>
+                            <th>Status</th>
                             <th>Plot Type</th>
                             <th>Price</th>
                             <th>Action</th>
@@ -32,7 +33,17 @@
                                 <td>{{ $plot->address }}</td>
                                 <td>{{ $plot->size }} </td>
                                 <td>{{ $plot->site->name }} </td>
-                                <td>{{ $plot->plotType ? $plot->plotType->name : '' }} </td>
+
+                                <td>
+                                    @if ($plot->isBooked)
+                                        <img src="{{ asset('imgs/booked.jpg') }}" width="80px" height="50px" />
+                                    @else
+                                        <img src="{{ asset('imgs/available.png') }}" width="50px" height="50px" />
+                                    @endif
+                                </td>
+
+
+                                <td>{{ $plot->plotType ? $plot->plotType->name : 'N/A' }} </td>
                                 <td>{{ $plot->price }} </td>
 
                                 <td>
