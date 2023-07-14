@@ -9,7 +9,7 @@
         @include('partials.alerts')
         <div class="card mb-4">
             <div class="card-header">
-                <h6 class="card-title mb-0">Users list</h6>
+                <h6 class="card-title mb-0">Site list</h6>
                 <a type="button" href="{{ route('site.create') }}" class="btn btn-outline-primary float-end ">Create site</a>
             </div>
             <div class="card-body">
