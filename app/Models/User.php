@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'usertype_id',
         'parent_id',
+        'phone'
     ];
 
     /**
@@ -53,5 +54,20 @@ class User extends Authenticatable
     public function  role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function isInvestor()
+    {
+        return $this->type->name == INVESTOR;
+    }
+
+    public function sites()
+    {
+        return $this->hasMany(Site::class);
+    }
+
+    public function investment()
+    {
+        return $this->hasMany(Investment::class);
     }
 }

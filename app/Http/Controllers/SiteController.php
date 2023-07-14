@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Investment;
 use App\Models\Site;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ class SiteController extends Controller
     }
     public function store(Request $req)
     {
+        // dd($req->all());
         $site = Site::create([
             'name' => $req->name,
             'address' => $req->address,
@@ -32,6 +34,16 @@ class SiteController extends Controller
             'user_id' => Auth::user()->id,
             'sitehead_id' => $req->sitehead_id
         ]);
+
+        $site->investors()->attach($req->investor_id);
+        foreach ($req->investor_id as $key => $value) {
+            Investment::create([
+                'investor_id' => $value,
+                'site_id' => $site->id,
+                'amount' => $req->amount[$key],
+                'date' => date('Y-m-d H:i:s')
+            ]);
+        }
         if ($site instanceof Site) {
             return redirect()->route('site.list')->with('success', 'site created successfully');
         } else {

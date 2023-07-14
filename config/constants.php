@@ -2,15 +2,14 @@
 
 define('ADMIN', 'Admin');
 define('AGENT', 'Agent');
+define('INVESTOR', 'Investor');
 define('SITE_HEAD', 'Site_Head');
 
 define('ROLES', [
     ADMIN,
-
 ]);
 
-define('USER_TYPES', [ADMIN, AGENT, SITE_HEAD]);
-
+define('USER_TYPES', [ADMIN, AGENT, SITE_HEAD, INVESTOR]);
 
 define('PERMISSIONS_CATEGORY', ['User management', 'Property Management', 'Investors management']);
 

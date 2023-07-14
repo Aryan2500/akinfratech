@@ -9,6 +9,7 @@ use App\Http\Controllers\PlottypeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
+use App\Models\Site;
 use Illuminate\Support\Facades\Route;
 
 

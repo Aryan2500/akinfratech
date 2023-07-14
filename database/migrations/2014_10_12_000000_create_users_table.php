@@ -19,7 +19,8 @@ return new class extends Migration
             $t->string('name');
             $t->string('email')->unique();
             $t->timestamp('email_verified_at')->nullable();
-            $t->string('password');
+            $t->string('password')->nullable()->comment('null for Invstors type of user');
+            $t->string('phone')->nullable();
             $t->foreignIdFor(Usertype::class);
             $t->foreignId('parent_id')->default(1);
             $t->rememberToken();

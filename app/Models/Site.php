@@ -14,6 +14,11 @@ class Site extends Model
 
     public function head()
     {
-        return $this->belongsTo(User::class ,'sitehead_id');
+        return $this->belongsTo(User::class, 'sitehead_id');
+    }
+
+    public function investors()
+    {
+        return $this->belongsToMany(User::class, 'site_investor' , 'site_id' , 'investor_id');
     }
 }

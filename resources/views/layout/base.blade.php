@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!--[ Jquery Core Js ]-->
     <link rel="stylesheet" href="{{ asset('assets/css/mycss.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bundles/select2.min.css') }}">
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
 
     @yield('page_css')
@@ -48,6 +49,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+
+    <script src="{{ asset('assets/bundles/select2.bundle.js') }}"></script>
+    
     <script src="{{ asset('assets/js/login-form-validator.js') }}"></script>
 
     <!--[ Chart plugin url ]-->

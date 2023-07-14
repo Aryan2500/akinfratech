@@ -19,6 +19,7 @@
                             <th>Name</th>
                             <th>Address</th>
                             <th>Site Head</th>
+                            <th>Investors</th>
                             <th>Total size</th>
                             <th>Action</th>
                         </tr>
@@ -29,9 +30,26 @@
                                 <td>{{ $site->name }}</td>
                                 <td>{{ $site->address }}</td>
 
-                                <td>{{ $site->head ? $site->head->name : '' }} <br>
-                                    {{ $site->head ? $site->head->email : '' }} <br>
-                                    {{ $site->head ? $site->head->phone : '' }}
+                                <td>
+                                    @if ($site->head)
+                                        {{ $site->head ? $site->head->name : '' }} <br>
+                                        {{ $site->head ? $site->head->email : '' }} <br>
+                                        {{ $site->head ? $site->head->phone : '' }}
+                                    @else
+                                        {{ 'N/A' }}
+                                    @endif
+
+                                </td>
+                                <td>
+                                    @if (count($site->investors) > 0)
+                                        <ul>
+                                            @foreach ($site->investors as $investor)
+                                                <li>{{ $investor->name }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @else
+                                        {{ 'N/A' }}
+                                    @endif
                                 </td>
                                 <td>{{ $site->total_size }}</td>
                                 <td>
