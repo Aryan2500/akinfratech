@@ -1,4 +1,112 @@
-<aside class="sidebar ">
+ <aside class="sidebar ">
+     <div class="container-fluid">
+         <!--[ sidebar:: menu list ]-->
+         <div class="flex-grow-1">
+             <ul class="menu-list mt-3 rounded-4">
+                 <!--[ Start:: brand logo and name ]-->
+                 <li class="brand-icon mb-3 py-1">
+                     <a href="index.html">
+                         <svg width="24" height="28" viewBox="0 0 24 28" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                             <path class="fill-primary"
+                                 d="M10.123 17.0196H14.7278L17.0428 19.9893L19.3201 22.6346L23.6121 28H18.5568L15.6038 24.3815L14.0897 22.2353L10.123 17.0196ZM24 13.1266C24 15.9133 23.4703 18.284 22.4108 20.2389C21.3598 22.1937 19.9249 23.6869 18.1064 24.7184C16.2961 25.7415 14.2607 26.2531 12 26.2531C9.72263 26.2531 7.67883 25.7374 5.86861 24.7059C4.05839 23.6744 2.62774 22.1812 1.57664 20.2264C0.525548 18.2715 0 15.9049 0 13.1266C0 10.3399 0.525548 7.9691 1.57664 6.01426C2.62774 4.05942 4.05839 2.57041 5.86861 1.54724C7.67883 0.515746 9.72263 0 12 0C14.2607 0 16.2961 0.515746 18.1064 1.54724C19.9249 2.57041 21.3598 4.05942 22.4108 6.01426C23.4703 7.9691 24 10.3399 24 13.1266ZM18.5068 13.1266C18.5068 11.3215 18.2357 9.79917 17.6934 8.55972C17.1595 7.32026 16.4046 6.38028 15.4286 5.73975C14.4526 5.09923 13.3097 4.77897 12 4.77897C10.6903 4.77897 9.54745 5.09923 8.57143 5.73975C7.59541 6.38028 6.83629 7.32026 6.29406 8.55972C5.76017 9.79917 5.49322 11.3215 5.49322 13.1266C5.49322 14.9317 5.76017 16.454 6.29406 17.6934C6.83629 18.9329 7.59541 19.8728 8.57143 20.5134C9.54745 21.1539 10.6903 21.4742 12 21.4742C13.3097 21.4742 14.4526 21.1539 15.4286 20.5134C16.4046 19.8728 17.1595 18.9329 17.6934 17.6934C18.2357 16.454 18.5068 14.9317 18.5068 13.1266Z"
+                                 fill="#5BC43A" />
+                         </svg>
+                         <span class="fs-5 ms-2">{{ env('APP_NAME') }}</span>
+                     </a>
+                     <button type="button" class="btn btn-link px-0" data-bs-toggle="modal"
+                         data-bs-target="#full_screen_menu" data-toggle="tooltip" title="Grid Fullscreen Menu"
+                         data-bs-placement="bottom">
+                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                             <path class="fill-muted"
+                                 d="M3.5 15C4.16304 15 4.79893 14.7366 5.26777 14.2678C5.73661 13.7989 6 13.163 6 12.5C6 11.837 5.73661 11.2011 5.26777 10.7322C4.79893 10.2634 4.16304 10 3.5 10C2.83696 10 2.20107 10.2634 1.73223 10.7322C1.26339 11.2011 1 11.837 1 12.5C1 13.163 1.26339 13.7989 1.73223 14.2678C2.20107 14.7366 2.83696 15 3.5 15ZM12.5 6C13.163 6 13.7989 5.73661 14.2678 5.26777C14.7366 4.79893 15 4.16304 15 3.5C15 2.83696 14.7366 2.20107 14.2678 1.73223C13.7989 1.26339 13.163 1 12.5 1C11.837 1 11.2011 1.26339 10.7322 1.73223C10.2634 2.20107 10 2.83696 10 3.5C10 4.16304 10.2634 4.79893 10.7322 5.26777C11.2011 5.73661 11.837 6 12.5 6ZM12.5 15C11.837 15 11.2011 14.7366 10.7322 14.2678C10.2634 13.7989 10 13.163 10 12.5C10 11.837 10.2634 11.2011 10.7322 10.7322C11.2011 10.2634 11.837 10 12.5 10C13.163 10 13.7989 10.2634 14.2678 10.7322C14.7366 11.2011 15 11.837 15 12.5C15 13.163 14.7366 13.7989 14.2678 14.2678C13.7989 14.7366 13.163 15 12.5 15ZM16 3.5C16 4.42826 15.6313 5.3185 14.9749 5.97487C14.3185 6.63125 13.4283 7 12.5 7C11.5717 7 10.6815 6.63125 10.0251 5.97487C9.36875 5.3185 9 4.42826 9 3.5C9 2.57174 9.36875 1.6815 10.0251 1.02513C10.6815 0.368749 11.5717 0 12.5 0C13.4283 0 14.3185 0.368749 14.9749 1.02513C15.6313 1.6815 16 2.57174 16 3.5ZM7 12.5C7 13.4283 6.63125 14.3185 5.97487 14.9749C5.3185 15.6313 4.42826 16 3.5 16C2.57174 16 1.6815 15.6313 1.02513 14.9749C0.368749 14.3185 0 13.4283 0 12.5C0 11.5717 0.368749 10.6815 1.02513 10.0251C1.6815 9.36875 2.57174 9 3.5 9C4.42826 9 5.3185 9.36875 5.97487 10.0251C6.63125 10.6815 7 11.5717 7 12.5ZM12.5 16C13.4283 16 14.3185 15.6313 14.9749 14.9749C15.6313 14.3185 16 13.4283 16 12.5C16 11.5717 15.6313 10.6815 14.9749 10.0251C14.3185 9.36875 13.4283 9 12.5 9C11.5717 9 10.6815 9.36875 10.0251 10.0251C9.36875 10.6815 9 11.5717 9 12.5C9 13.4283 9.36875 14.3185 10.0251 14.9749C10.6815 15.6313 11.5717 16 12.5 16Z" />
+                             <path class="fill-primary"
+                                 d="M5.97487 5.97487C5.3185 6.63125 4.42826 7 3.5 7C2.57174 7 1.6815 6.63125 1.02513 5.97487C0.368749 5.3185 0 4.42826 0 3.5C0 2.57174 0.368749 1.6815 1.02513 1.02513C1.6815 0.368749 2.57174 0 3.5 0C4.42826 0 5.3185 0.368749 5.97487 1.02513C6.63125 1.6815 7 2.57174 7 3.5C7 4.42826 6.63125 5.3185 5.97487 5.97487Z" />
+                         </svg>
+                     </button>
+                 </li>
+                 <!--[ Start:: dashboard ]-->
+                 <li class="collapsed">
+                     <a class="m-link  {{ request()->is('admin/dashboard') ? 'active' : '' }}" data-bs-toggle="collapse"
+                         data-bs-target="#menu_dashboard" href="#">
+                         <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                             <path opacity="0.2"
+                                 d="M8.186 1.11303C8.06662 1.06519 7.93338 1.06519 7.814 1.11303L1.846 3.50003L8 5.96103L14.154 3.50003L8.186 1.11303ZM15 4.23903L8.5 6.83903V14.761L15 12.161V4.24003V4.23903ZM7.5 14.762V6.83803L1 4.23903V12.162L7.5 14.762V14.762ZM7.443 0.184033C7.80057 0.041032 8.19943 0.041032 8.557 0.184033L15.686 3.03603C15.7787 3.07318 15.8581 3.13723 15.9141 3.21992C15.9701 3.30262 16 3.40018 16 3.50003V12.162C15.9999 12.3619 15.9399 12.5571 15.8278 12.7225C15.7157 12.8879 15.5566 13.0159 15.371 13.09L8.186 15.964C8.06662 16.0119 7.93338 16.0119 7.814 15.964L0.63 13.09C0.444251 13.0161 0.284942 12.8881 0.172642 12.7227C0.0603417 12.5573 0.000206329 12.362 0 12.162L0 3.50003C2.32399e-05 3.40018 0.0299437 3.30262 0.085907 3.21992C0.14187 3.13723 0.221313 3.07318 0.314 3.03603L7.443 0.184033Z" />
+                             <path opacity="0.8" d="M8 7L1 4V12.5L8 15V7Z" />
+                         </svg>
+                         <span class="mx-3">Dashboard</span>
+                         <span class="arrow fa fa-angle-down ms-auto text-end"></span>
+                     </a>
+                     <!-- Menu: Sub menu ul -->
+                     <ul class="sub-menu collapse  {{ request()->is('admin/dashboard') ? 'show' : '' }}"
+                         id="menu_dashboard">
+                         <li><a class="ms-link {{ request()->is('admin/dashboard') ? 'active' : '' }}"
+                                 href="{{ route('dashboard') }}">My
+                                 Dashboard</a></li>
+                     </ul>
+                 </li>
+                 <!--[ Start:: Account ]-->
+                 <li class="collapsed">
+                     <a class="m-link {{ request()->is('admin/user-management*') ? 'active' : '' }}"
+                         data-bs-toggle="collapse" data-bs-target="#menu_apps" href="#">
+                         <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                             <path opacity="0.7"
+                                 d="M6 8C6.79565 8 7.55871 7.68393 8.12132 7.12132C8.68393 6.55871 9 5.79565 9 5C9 4.20435 8.68393 3.44129 8.12132 2.87868C7.55871 2.31607 6.79565 2 6 2C5.20435 2 4.44129 2.31607 3.87868 2.87868C3.31607 3.44129 3 4.20435 3 5C3 5.79565 3.31607 6.55871 3.87868 7.12132C4.44129 7.68393 5.20435 8 6 8ZM1 14C1 14 0 14 0 13C0 12 1 9 6 9C11 9 12 12 12 13C12 14 11 14 11 14H1Z" />
+                             <path opacity="0.4"
+                                 d="M11.1464 3.14645C11.0527 3.24021 11 3.36739 11 3.5C11 3.63261 11.0527 3.75979 11.1464 3.85355C11.2402 3.94732 11.3674 4 11.5 4H15.5C15.6326 4 15.7598 3.94732 15.8536 3.85355C15.9473 3.75979 16 3.63261 16 3.5C16 3.36739 15.9473 3.24021 15.8536 3.14645C15.7598 3.05268 15.6326 3 15.5 3H11.5C11.3674 3 11.2402 3.05268 11.1464 3.14645Z" />
+                             <path opacity="0.4"
+                                 d="M11.1464 6.14645C11.2402 6.05268 11.3674 6 11.5 6H15.5C15.6326 6 15.7598 6.05268 15.8536 6.14645C15.9473 6.24021 16 6.36739 16 6.5C16 6.63261 15.9473 6.75979 15.8536 6.85355C15.7598 6.94732 15.6326 7 15.5 7H11.5C11.3674 7 11.2402 6.94732 11.1464 6.85355C11.0527 6.75979 11 6.63261 11 6.5C11 6.36739 11.0527 6.24021 11.1464 6.14645Z" />
+                             <path opacity="0.4"
+                                 d="M13.1464 9.14645C13.2402 9.05268 13.3674 9 13.5 9H15.5C15.6326 9 15.7598 9.05268 15.8536 9.14645C15.9473 9.24021 16 9.36739 16 9.5C16 9.63261 15.9473 9.75979 15.8536 9.85355C15.7598 9.94732 15.6326 10 15.5 10H13.5C13.3674 10 13.2402 9.94732 13.1464 9.85355C13.0527 9.75979 13 9.63261 13 9.5C13 9.36739 13.0527 9.24021 13.1464 9.14645Z" />
+                             <path opacity="0.4"
+                                 d="M13.1464 12.1464C13.2402 12.0527 13.3674 12 13.5 12H15.5C15.6326 12 15.7598 12.0527 15.8536 12.1464C15.9473 12.2402 16 12.3674 16 12.5C16 12.6326 15.9473 12.7598 15.8536 12.8536C15.7598 12.9473 15.6326 13 15.5 13H13.5C13.3674 13 13.2402 12.9473 13.1464 12.8536C13.0527 12.7598 13 12.6326 13 12.5C13 12.3674 13.0527 12.2402 13.1464 12.1464Z" />
+                         </svg>
+                         <span class="mx-3">User Management</span>
+                         <span class="arrow fa fa-angle-down ms-auto text-end"></span>
+                     </a>
+                     <!-- Menu: Sub menu ul -->
+                     <ul class="sub-menu collapse {{ request()->is('admin/user-management*') ? 'show' : '' }}"
+                         id="menu_apps">
+                         <li><a class="ms-link {{ request()->is('admin/user-management/user*') ? 'active' : '' }}"
+                                 href="{{ route('user.list') }}">Users</a></li>
+                         <li><a class="ms-link {{ request()->is('admin/user-management/role*') ? 'active' : '' }}"
+                                 href="{{ route('role.list') }}">Roles</a></li>
+
+                     </ul>
+                 </li>
+                 <li class="collapsed">
+                     <a class="m-link {{ request()->is('admin/property-management*') ? 'active' : '' }}"
+                         data-bs-toggle="collapse" data-bs-target="#properyMenu" href="#">
+                         <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                             <path opacity="0.2"
+                                 d="M8.186 1.11303C8.06662 1.06519 7.93338 1.06519 7.814 1.11303L1.846 3.50003L8 5.96103L14.154 3.50003L8.186 1.11303ZM15 4.23903L8.5 6.83903V14.761L15 12.161V4.24003V4.23903ZM7.5 14.762V6.83803L1 4.23903V12.162L7.5 14.762V14.762ZM7.443 0.184033C7.80057 0.041032 8.19943 0.041032 8.557 0.184033L15.686 3.03603C15.7787 3.07318 15.8581 3.13723 15.9141 3.21992C15.9701 3.30262 16 3.40018 16 3.50003V12.162C15.9999 12.3619 15.9399 12.5571 15.8278 12.7225C15.7157 12.8879 15.5566 13.0159 15.371 13.09L8.186 15.964C8.06662 16.0119 7.93338 16.0119 7.814 15.964L0.63 13.09C0.444251 13.0161 0.284942 12.8881 0.172642 12.7227C0.0603417 12.5573 0.000206329 12.362 0 12.162L0 3.50003C2.32399e-05 3.40018 0.0299437 3.30262 0.085907 3.21992C0.14187 3.13723 0.221313 3.07318 0.314 3.03603L7.443 0.184033Z" />
+                             <path opacity="0.8" d="M8 7L1 4V12.5L8 15V7Z" />
+                         </svg>
+                         <span class="mx-3">Property Management</span>
+                         <span class="arrow fa fa-angle-down ms-auto text-end"></span>
+                     </a>
+                     <!-- Menu: Sub menu ul -->
+                     <ul class="sub-menu collapse {{ request()->is('admin/property-management*') ? 'show' : '' }}"
+                         id="properyMenu">
+                         <li><a class="ms-link {{ request()->is('admin/property-management/site*') ? 'active' : '' }}"
+                                 href="{{ route('site.list') }}">Site</a></li>
+                         <li><a class="ms-link {{ request()->is('admin/property-management/ptype*') ? 'active' : '' }}"
+                                 href="{{ route('plottype.list') }}">Plot Type</a></li>
+                         <li><a class="ms-link {{ request()->is('admin/property-management/plot*') ? 'active' : '' }}"
+                                 href="{{ route('plot.list') }}">Plot</a></li>
+
+                     </ul>
+                 </li>
+
+             </ul>
+
+         </div>
+
+     </div>
+ </aside>
+
+ {{-- <aside class="sidebar ">
     <div class="container-fluid">
         <!--[ sidebar:: menu list ]-->
         <div class="flex-grow-1">
@@ -12,7 +120,7 @@
                                 d="M10.123 17.0196H14.7278L17.0428 19.9893L19.3201 22.6346L23.6121 28H18.5568L15.6038 24.3815L14.0897 22.2353L10.123 17.0196ZM24 13.1266C24 15.9133 23.4703 18.284 22.4108 20.2389C21.3598 22.1937 19.9249 23.6869 18.1064 24.7184C16.2961 25.7415 14.2607 26.2531 12 26.2531C9.72263 26.2531 7.67883 25.7374 5.86861 24.7059C4.05839 23.6744 2.62774 22.1812 1.57664 20.2264C0.525548 18.2715 0 15.9049 0 13.1266C0 10.3399 0.525548 7.9691 1.57664 6.01426C2.62774 4.05942 4.05839 2.57041 5.86861 1.54724C7.67883 0.515746 9.72263 0 12 0C14.2607 0 16.2961 0.515746 18.1064 1.54724C19.9249 2.57041 21.3598 4.05942 22.4108 6.01426C23.4703 7.9691 24 10.3399 24 13.1266ZM18.5068 13.1266C18.5068 11.3215 18.2357 9.79917 17.6934 8.55972C17.1595 7.32026 16.4046 6.38028 15.4286 5.73975C14.4526 5.09923 13.3097 4.77897 12 4.77897C10.6903 4.77897 9.54745 5.09923 8.57143 5.73975C7.59541 6.38028 6.83629 7.32026 6.29406 8.55972C5.76017 9.79917 5.49322 11.3215 5.49322 13.1266C5.49322 14.9317 5.76017 16.454 6.29406 17.6934C6.83629 18.9329 7.59541 19.8728 8.57143 20.5134C9.54745 21.1539 10.6903 21.4742 12 21.4742C13.3097 21.4742 14.4526 21.1539 15.4286 20.5134C16.4046 19.8728 17.1595 18.9329 17.6934 17.6934C18.2357 16.454 18.5068 14.9317 18.5068 13.1266Z"
                                 fill="#5BC43A" />
                         </svg>
-                        <span class="fs-5 ms-2">{{ env('APP_NAME') }}</span>
+                        <span class="fs-5 ms-2">QBoat</span>
                     </a>
                     <button type="button" class="btn btn-link px-0" data-bs-toggle="modal"
                         data-bs-target="#full_screen_menu" data-toggle="tooltip" title="Grid Fullscreen Menu"
@@ -28,8 +136,7 @@
                 </li>
                 <!--[ Start:: dashboard ]-->
                 <li class="collapsed">
-                    <a class="m-link  {{ request()->is('admin/dashboard') ? 'active' : '' }}" data-bs-toggle="collapse"
-                        data-bs-target="#menu_dashboard" href="#">
+                    <a class="m-link active" data-bs-toggle="collapse" data-bs-target="#menu_dashboard" href="#">
                         <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path opacity="0.2"
                                 d="M8.186 1.11303C8.06662 1.06519 7.93338 1.06519 7.814 1.11303L1.846 3.50003L8 5.96103L14.154 3.50003L8.186 1.11303ZM15 4.23903L8.5 6.83903V14.761L15 12.161V4.24003V4.23903ZM7.5 14.762V6.83803L1 4.23903V12.162L7.5 14.762V14.762ZM7.443 0.184033C7.80057 0.041032 8.19943 0.041032 8.557 0.184033L15.686 3.03603C15.7787 3.07318 15.8581 3.13723 15.9141 3.21992C15.9701 3.30262 16 3.40018 16 3.50003V12.162C15.9999 12.3619 15.9399 12.5571 15.8278 12.7225C15.7157 12.8879 15.5566 13.0159 15.371 13.09L8.186 15.964C8.06662 16.0119 7.93338 16.0119 7.814 15.964L0.63 13.09C0.444251 13.0161 0.284942 12.8881 0.172642 12.7227C0.0603417 12.5573 0.000206329 12.362 0 12.162L0 3.50003C2.32399e-05 3.40018 0.0299437 3.30262 0.085907 3.21992C0.14187 3.13723 0.221313 3.07318 0.314 3.03603L7.443 0.184033Z" />
@@ -39,17 +146,24 @@
                         <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                     </a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse  {{ request()->is('admin/dashboard') ? 'show' : '' }}"
-                        id="menu_dashboard">
-                        <li><a class="ms-link {{ request()->is('admin/dashboard') ? 'active' : '' }}"
-                                href="{{ route('dashboard') }}">My
-                                Dashboard</a></li>
+                    <ul class="sub-menu collapse show" id="menu_dashboard">
+                        <li><a class="ms-link active" href="index.html">My Dashboard</a></li>
+                        <li><a class="ms-link" href="my-analytics.html">Analytics</a></li>
+                        <li><a class="ms-link" href="my-project.html">My Project</a></li>
+                        <li><a class="ms-link" href="my-wallet.html">Wallet</a></li>
+                        <li><a class="ms-link" href="my-iot.html">Smart IOT</a></li>
+                        <li><a class="ms-link" href="my-task.html">My Task</a></li>
+                        <li><a class="ms-link" href="my-ecommerce.html">eCommerce</a></li>
+                        <li><a class="ms-link" href="my-realestate.html">Real Estate</a></li>
+                        <li><a class="ms-link" href="my-jobboard.html">Job Portal</a></li>
+                        <li><a class="ms-link" href="my-crypto.html">Crypto</a></li>
+                        <li><a class="ms-link" href="my-fitness.html">Fitness</a></li>
+                        <li><a class="ms-link" href="university.html">University</a></li>
                     </ul>
                 </li>
                 <!--[ Start:: Account ]-->
-                <li class="collapsed">
-                    <a class="m-link {{ request()->is('admin/user-management*') ? 'active' : '' }}"
-                        data-bs-toggle="collapse" data-bs-target="#menu_apps" href="#">
+                <li>
+                    <a class="m-link" href="account.html">
                         <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path opacity="0.7"
                                 d="M6 8C6.79565 8 7.55871 7.68393 8.12132 7.12132C8.68393 6.55871 9 5.79565 9 5C9 4.20435 8.68393 3.44129 8.12132 2.87868C7.55871 2.31607 6.79565 2 6 2C5.20435 2 4.44129 2.31607 3.87868 2.87868C3.31607 3.44129 3 4.20435 3 5C3 5.79565 3.31607 6.55871 3.87868 7.12132C4.44129 7.68393 5.20435 8 6 8ZM1 14C1 14 0 14 0 13C0 12 1 9 6 9C11 9 12 12 12 13C12 14 11 14 11 14H1Z" />
@@ -62,52 +176,240 @@
                             <path opacity="0.4"
                                 d="M13.1464 12.1464C13.2402 12.0527 13.3674 12 13.5 12H15.5C15.6326 12 15.7598 12.0527 15.8536 12.1464C15.9473 12.2402 16 12.3674 16 12.5C16 12.6326 15.9473 12.7598 15.8536 12.8536C15.7598 12.9473 15.6326 13 15.5 13H13.5C13.3674 13 13.2402 12.9473 13.1464 12.8536C13.0527 12.7598 13 12.6326 13 12.5C13 12.3674 13.0527 12.2402 13.1464 12.1464Z" />
                         </svg>
-                        <span class="mx-3">User Management</span>
-                        <span class="arrow fa fa-angle-down ms-auto text-end"></span>
+                        <span class="mx-3">Account Setting</span>
                     </a>
-                    <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse {{ request()->is('admin/user-management*') ? 'show' : '' }}"
-                        id="menu_apps">
-                        <li><a class="ms-link {{ request()->is('admin/user-management/user*') ? 'active' : '' }}"
-                                href="{{ route('user.list') }}">Users</a></li>
-                        <li><a class="ms-link {{ request()->is('admin/user-management/role*') ? 'active' : '' }}"
-                                href="{{ route('role.list') }}">Roles</a></li>
-                        {{-- <li><a class="ms-link" href="app-chat.html">Chat app</a></li>
-                        <li><a class="ms-link" href="app-contacts.html">Contacts</a></li>
-                        <li><a class="ms-link" href="app-filemanager.html">File Manager</a></li>
-                        <li><a class="ms-link" href="app-invoice.html">Invoice</a></li> --}}
-                    </ul>
                 </li>
                 <li class="collapsed">
-                    <a class="m-link {{ request()->is('admin/property-management*') ? 'active' : '' }}"
-                        data-bs-toggle="collapse" data-bs-target="#properyMenu" href="#">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu_apps" href="#">
                         <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path opacity="0.2"
                                 d="M8.186 1.11303C8.06662 1.06519 7.93338 1.06519 7.814 1.11303L1.846 3.50003L8 5.96103L14.154 3.50003L8.186 1.11303ZM15 4.23903L8.5 6.83903V14.761L15 12.161V4.24003V4.23903ZM7.5 14.762V6.83803L1 4.23903V12.162L7.5 14.762V14.762ZM7.443 0.184033C7.80057 0.041032 8.19943 0.041032 8.557 0.184033L15.686 3.03603C15.7787 3.07318 15.8581 3.13723 15.9141 3.21992C15.9701 3.30262 16 3.40018 16 3.50003V12.162C15.9999 12.3619 15.9399 12.5571 15.8278 12.7225C15.7157 12.8879 15.5566 13.0159 15.371 13.09L8.186 15.964C8.06662 16.0119 7.93338 16.0119 7.814 15.964L0.63 13.09C0.444251 13.0161 0.284942 12.8881 0.172642 12.7227C0.0603417 12.5573 0.000206329 12.362 0 12.162L0 3.50003C2.32399e-05 3.40018 0.0299437 3.30262 0.085907 3.21992C0.14187 3.13723 0.221313 3.07318 0.314 3.03603L7.443 0.184033Z" />
                             <path opacity="0.8" d="M8 7L1 4V12.5L8 15V7Z" />
                         </svg>
-                        <span class="mx-3">Property Management</span>
+                        <span class="mx-3">Apps</span>
                         <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                     </a>
                     <!-- Menu: Sub menu ul -->
-                    <ul class="sub-menu collapse {{ request()->is('admin/property-management*') ? 'show' : '' }}"
-                        id="properyMenu">
-                        <li><a class="ms-link {{ request()->is('admin/property-management/site*') ? 'active' : '' }}"
-                                href="{{ route('site.list') }}">Site</a></li>
-                        <li><a class="ms-link {{ request()->is('admin/property-management/ptype*') ? 'active' : '' }}"
-                                href="{{ route('plottype.list') }}">Plot Type</a></li>
-                        <li><a class="ms-link {{ request()->is('admin/property-management/plot*') ? 'active' : '' }}"
-                                href="{{ route('plot.list') }}">Plot</a></li>
-                        {{-- <li><a class="ms-link" href="app-chat.html">Chat app</a></li>
+                    <ul class="sub-menu collapse" id="menu_apps">
+                        <li><a class="ms-link" href="app-calendar.html">Calendar</a></li>
+                        <li><a class="ms-link" href="app-inbox.html">Email App</a></li>
+                        <li><a class="ms-link" href="app-chat.html">Chat app</a></li>
                         <li><a class="ms-link" href="app-contacts.html">Contacts</a></li>
                         <li><a class="ms-link" href="app-filemanager.html">File Manager</a></li>
-                        <li><a class="ms-link" href="app-invoice.html">Invoice</a></li> --}}
+                        <li><a class="ms-link" href="app-invoice.html">Invoice</a></li>
                     </ul>
                 </li>
-
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu_pages" href="#">
+                        <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor">
+                            <path opacity="0.4"
+                                d="M14 4.5V11H13V4.5H11C10.6022 4.5 10.2206 4.34196 9.93934 4.06066C9.65804 3.77936 9.5 3.39782 9.5 3V1H4C3.73478 1 3.48043 1.10536 3.29289 1.29289C3.10536 1.48043 3 1.73478 3 2L8 11H3H2V2C2 1.46957 2.21071 0.960859 2.58579 0.585786C2.96086 0.210714 3.46957 0 4 0L9.5 0L14 4.5Z" />
+                            <path opacity="0.9"
+                                d="M4.264 15.849V11.85H3.473V13.476H1.791V11.85H1V15.849H1.79V14.135H3.473V15.849H4.264Z" />
+                            <path opacity="0.9"
+                                d="M6.515 15.849V12.512H7.652V11.85H4.588V12.512H5.721V15.849H6.515Z" />
+                            <path opacity="0.9"
+                                d="M8.691 13.189V15.849H7.985V11.85H8.79L9.93 14.446H9.956L11.096 11.85H11.896V15.849H11.181V13.188H11.143L10.197 15.348H9.681L8.729 13.189H8.691Z" />
+                            <path opacity="0.9" d="M15.097 15.175H13.401H13.4V11.85H12.61V15.849H15.097V15.175Z" />
+                        </svg>
+                        <span class="mx-3">More Pages</span>
+                        <span class="arrow fa fa-angle-down ms-auto text-end"></span>
+                    </a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="menu_pages">
+                        <li><a class="ms-link" href="crafted-profile.html">My Profile</a></li>
+                        <li><a class="ms-link" href="crafted-activity.html">User Activity</a></li>
+                        <li><a class="ms-link" href="crafted-gallery.html">Image Gallery</a></li>
+                        <li><a class="ms-link" href="crafted-ticket.html">Support Ticket</a></li>
+                        <li><a class="ms-link" href="crafted-pricing.html">Pricing Table</a></li>
+                        <li><a class="ms-link" href="crafted-search.html">Search Pages</a></li>
+                        <li><a class="ms-link" href="crafted-map.html">World Map</a></li>
+                    </ul>
+                </li>
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu_auth" href="#">
+                        <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor">
+                            <rect opacity="0.2" width="16" height="16" rx="2" />
+                            <path opacity="0.7"
+                                d="M8 3.625C8.42435 3.625 8.83131 3.7567 9.13137 3.99112C9.43143 4.22554 9.6 4.54348 9.6 4.875V7.375H6.4V4.875C6.4 4.54348 6.56857 4.22554 6.86863 3.99112C7.16869 3.7567 7.57565 3.625 8 3.625ZM10.4 7.375V4.875C10.4 4.37772 10.1471 3.90081 9.69706 3.54917C9.24697 3.19754 8.63652 3 8 3C7.36348 3 6.75303 3.19754 6.30294 3.54917C5.85286 3.90081 5.6 4.37772 5.6 4.875V7.375C5.17565 7.375 4.76869 7.5067 4.46863 7.74112C4.16857 7.97554 4 8.29348 4 8.625V11.75C4 12.0815 4.16857 12.3995 4.46863 12.6339C4.76869 12.8683 5.17565 13 5.6 13H10.4C10.8243 13 11.2313 12.8683 11.5314 12.6339C11.8314 12.3995 12 12.0815 12 11.75V8.625C12 8.29348 11.8314 7.97554 11.5314 7.74112C11.2313 7.5067 10.8243 7.375 10.4 7.375Z" />
+                        </svg>
+                        <span class="mx-3">Authentication</span>
+                        <span class="arrow fa fa-angle-down ms-auto text-end"></span>
+                    </a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="menu_auth">
+                        <li><a class="ms-link" href="auth-signin.html">Sign in</a></li>
+                        <li><a class="ms-link" href="auth-signup.html">Sign up</a></li>
+                        <li><a class="ms-link" href="auth-password-reset.html">Password reset</a></li>
+                        <li><a class="ms-link" href="auth-two-step.html">2-Step Authentication</a></li>
+                        <li><a class="ms-link" href="auth-lockscreen.html">Lockscreen</a></li>
+                        <li><a class="ms-link" href="auth-maintenance.html">Maintenance</a></li>
+                        <li><a class="ms-link" href="auth-404.html">404</a></li>
+                    </ul>
+                </li>
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu_landing" href="#">
+                        <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" class="bi bi-front">
+                            <path opacity="0.8"
+                                d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm5 10v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2v5a2 2 0 0 1-2 2H5z" />
+                        </svg>
+                        <span class="mx-3">Landing Pages</span>
+                        <span class="arrow fa fa-angle-down ms-auto text-end"></span>
+                    </a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="menu_landing">
+                        <li><a class="ms-link" href="landing-realestate/lan-realestate.html">Real Estate</a></li>
+                        <li><a class="ms-link" href="landing-jobboard/lan-jobboard.html">Job Board</a></li>
+                        <li><a class="ms-link" href="landing-ecommerce/lan-ecommerce.html">eCommerce</a></li>
+                        <li><a class="ms-link" href="landing-crypto/lan-crypto.html">Crypto</a></li>
+                        <li><a class="ms-link" href="landing-fitness/lan-fitness.html">Fitness</a></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <!--[ Start:: Documentation ]-->
+                <li class="collapsed">
+                    <a class="m-link" data-bs-toggle="collapse" data-bs-target="#menu_docs" href="#">
+                        <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor">
+                            <path opacity="0.2"
+                                d="M6.5 0C6.10218 0 5.72064 0.158035 5.43934 0.43934C5.15804 0.720644 5 1.10218 5 1.5V2.5C5 2.89782 5.15804 3.27936 5.43934 3.56066C5.72064 3.84196 6.10218 4 6.5 4H9.5C9.89782 4 10.2794 3.84196 10.5607 3.56066C10.842 3.27936 11 2.89782 11 2.5V1.5C11 1.10218 10.842 0.720644 10.5607 0.43934C10.2794 0.158035 9.89782 0 9.5 0L6.5 0ZM9.5 1C9.63261 1 9.75979 1.05268 9.85355 1.14645C9.94732 1.24021 10 1.36739 10 1.5V2.5C10 2.63261 9.94732 2.75979 9.85355 2.85355C9.75979 2.94732 9.63261 3 9.5 3H6.5C6.36739 3 6.24021 2.94732 6.14645 2.85355C6.05268 2.75979 6 2.63261 6 2.5V1.5C6 1.36739 6.05268 1.24021 6.14645 1.14645C6.24021 1.05268 6.36739 1 6.5 1H9.5Z" />
+                            <path opacity="0.2"
+                                d="M4 1.5H3C2.46957 1.5 1.96086 1.71071 1.58579 2.08579C1.21071 2.46086 1 2.96957 1 3.5V14C1 14.5304 1.21071 15.0391 1.58579 15.4142C1.96086 15.7893 2.46957 16 3 16H13C13.5304 16 14.0391 15.7893 14.4142 15.4142C14.7893 15.0391 15 14.5304 15 14V3.5C15 2.96957 14.7893 2.46086 14.4142 2.08579C14.0391 1.71071 13.5304 1.5 13 1.5H12V2.5C12 2.8283 11.9353 3.15339 11.8097 3.45671C11.6841 3.76002 11.4999 4.03562 11.2678 4.26777C11.0356 4.49991 10.76 4.68406 10.4567 4.8097C10.1534 4.93534 9.8283 5 9.5 5H6.5C5.83696 5 5.20107 4.73661 4.73223 4.26777C4.26339 3.79893 4 3.16304 4 2.5V1.5Z" />
+                            <path opacity="0.9"
+                                d="M5.5 7C5.36739 7 5.24021 7.05268 5.14645 7.14645C5.05268 7.24021 5 7.36739 5 7.5C5 7.63261 5.05268 7.75979 5.14645 7.85355C5.24021 7.94732 5.36739 8 5.5 8H10.5C10.6326 8 10.7598 7.94732 10.8536 7.85355C10.9473 7.75979 11 7.63261 11 7.5C11 7.36739 10.9473 7.24021 10.8536 7.14645C10.7598 7.05268 10.6326 7 10.5 7H5.5ZM5 9.5C5 9.36739 5.05268 9.24021 5.14645 9.14645C5.24021 9.05268 5.36739 9 5.5 9H10.5C10.6326 9 10.7598 9.05268 10.8536 9.14645C10.9473 9.24021 11 9.36739 11 9.5C11 9.63261 10.9473 9.75979 10.8536 9.85355C10.7598 9.94732 10.6326 10 10.5 10H5.5C5.36739 10 5.24021 9.94732 5.14645 9.85355C5.05268 9.75979 5 9.63261 5 9.5ZM5 11.5C5 11.3674 5.05268 11.2402 5.14645 11.1464C5.24021 11.0527 5.36739 11 5.5 11H7.5C7.63261 11 7.75979 11.0527 7.85355 11.1464C7.94732 11.2402 8 11.3674 8 11.5C8 11.6326 7.94732 11.7598 7.85355 11.8536C7.75979 11.9473 7.63261 12 7.5 12H5.5C5.36739 12 5.24021 11.9473 5.14645 11.8536C5.05268 11.7598 5 11.6326 5 11.5Z" />
+                        </svg>
+                        <span class="mx-3">Documentation</span>
+                        <span class="arrow fa fa-angle-down ms-auto text-end"></span>
+                    </a>
+                    <!-- Menu: Sub menu ul -->
+                    <ul class="sub-menu collapse" id="menu_docs">
+                        <li><a class="ms-link" href="docs/index.html">Getting Started</a></li>
+                        <li><a class="ms-link" href="docs/widget.html">Widget's</a></li>
+                        <li><a class="ms-link" href="docs/charts.html">Chart's</a></li>
+                        <li><a class="ms-link" href="docs/form.html">Form Elements</a></li>
+                        <li><a class="ms-link" href="docs/fonticon.html">Font icon</a></li>
+                        <li><a class="ms-link" href="docs/plugins.html">Vendor Plugins</a></li>
+                        <li><a class="ms-link" href="docs/bootstrap.html">Bootstrap UI</a></li>
+                    </ul>
+                </li>
+                <!--[ Start:: Changelog ]-->
+                <li>
+                    <a class="m-link" href="changelog.html">
+                        <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor">
+                            <path opacity="0.6"
+                                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path opacity="0.2"
+                                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>
+                        <span class="mx-3">Changelog</span>
+                    </a>
+                </li>
             </ul>
-
+            <div class="card promo text-center">
+                <div class="card-body">
+                    <svg class="mx-auto mb-3" width="100" viewBox="0 0 512 317" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M-0.5 315.65C-0.5 314.941 0.0743531 314.367 0.782854 314.367H510.717C511.426 314.367 512 314.941 512 315.65C512 316.358 511.426 316.932 510.717 316.932H0.782854C0.0743531 316.932 -0.5 316.358 -0.5 315.65Z"
+                            fill="#3E3D3D" />
+                        <path d="M297.122 178.384H454.913V315.65H297.122V178.384Z" fill="#F1F1F1" />
+                        <path
+                            d="M315.082 24.442C315.082 22.3165 316.805 20.5934 318.931 20.5934H413.862C415.987 20.5934 417.71 22.3165 417.71 24.442V142.465C417.71 144.59 415.987 146.313 413.862 146.313H318.931C316.805 146.313 315.082 144.59 315.082 142.465V24.442Z"
+                            fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M313.799 24.442C313.799 21.608 316.097 19.3105 318.931 19.3105H413.862C416.696 19.3105 418.993 21.608 418.993 24.442V142.464C418.993 145.299 416.696 147.596 413.862 147.596H318.931C316.097 147.596 313.799 145.298 313.799 142.464V24.442ZM318.931 21.8763C317.514 21.8763 316.365 23.025 316.365 24.442V142.464C316.365 143.881 317.514 145.03 318.931 145.03H413.862C415.279 145.03 416.428 143.881 416.428 142.464V24.442C416.428 23.025 415.279 21.8763 413.862 21.8763H318.931Z"
+                            fill="#3E3D3D" />
+                        <path d="M325.345 34.0634H362.547V80.2461H325.345V34.0634Z" fill="#F1F1F1" />
+                        <path d="M325.345 87.9432H362.547V134.126H325.345V87.9432Z" fill="#F1F1F1" />
+                        <path d="M370.245 34.0634H407.447V80.2461H370.245V34.0634Z" fill="#F1F1F1" />
+                        <path d="M370.245 87.9432H407.447V134.126H370.245V87.9432Z" fill="#F1F1F1" />
+                        <path d="M265.051 305.387H339.456V315.65H265.051V305.387Z" fill="#E5E5E5" />
+                        <path
+                            d="M259.278 100.13C260.817 114.498 272.32 118.945 277.879 119.373L333.684 134.126C334.966 134.981 339.328 135.409 346.512 130.277C353.696 125.146 352.071 116.594 350.361 112.959C352.285 111.89 356.262 108.084 356.775 101.413C357.288 94.7424 351.43 89.6537 348.436 87.9432C350.574 85.5912 353.568 78.963 348.436 71.2661C343.305 63.5693 334.753 68.0591 331.118 71.2661C330.904 67.8451 328.809 60.3616 322.138 57.7959C315.467 55.2302 306.53 58.8649 302.895 61.003C300.116 57.5821 291.606 52.1513 279.804 57.7959C268.001 63.4404 271.465 75.542 274.672 80.8872C268.899 81.3148 257.739 85.7621 259.278 100.13Z"
+                            fill="#3E3D3D" />
+                        <path
+                            d="M287.608 162.99C286.681 165.043 284.517 165.556 283.551 165.556L284.71 173.894L295.143 188.006L322.963 197.627C328.759 186.509 339.539 164.016 336.293 162.99C332.236 161.707 329.918 156.576 329.918 148.879V127.712C331.773 126.172 333.396 122.366 333.975 120.656C334.439 111.419 329.918 107.4 327.6 106.545C325.281 107.827 319.485 109.623 314.849 106.545C310.212 103.466 308.667 96.7094 308.473 93.7161C306.928 96.068 302.793 100.772 298.62 100.772C294.447 100.772 291.472 96.9232 290.506 94.9989C288.652 100.13 280.46 104.834 276.596 106.545C276.596 111.676 276.944 124.889 278.335 136.692C279.726 148.494 285.097 154.865 287.608 156.576C287.995 157.859 288.536 160.938 287.608 162.99Z"
+                            fill="#EFCB96" />
+                        <path
+                            d="M266.334 31.4977C266.334 38.2284 260.877 43.6848 254.147 43.6848C247.416 43.6848 241.959 38.2284 241.959 31.4977C241.959 24.7669 247.416 19.3105 254.147 19.3105C260.877 19.3105 266.334 24.7669 266.334 31.4977Z"
+                            fill="#F1F1F1" />
+                        <path
+                            d="M229.131 85.3773C229.131 132.493 190.936 170.687 143.821 170.687C96.7057 170.687 58.5112 132.493 58.5112 85.3773C58.5112 38.262 96.7057 0.0675659 143.821 0.0675659C190.936 0.0675659 229.131 38.262 229.131 85.3773Z"
+                            fill="var(--accent-color)" />
+                        <path
+                            d="M222.716 85.3775C222.716 128.95 187.394 164.273 143.821 164.273C100.248 164.273 64.9253 128.95 64.9253 85.3775C64.9253 41.8048 100.248 6.48206 143.821 6.48206C187.394 6.48206 222.716 41.8048 222.716 85.3775Z"
+                            fill="white" />
+                        <path d="M127.785 21.021L139.514 86.0189L148.311 84.3085L131.304 19.3105L127.785 21.021Z"
+                            fill="#F1F1F1" />
+                        <path d="M95.7139 107.244L139.419 82.1704L145.745 90.334L99.1643 114.242L95.7139 107.244Z"
+                            fill="#E5E5E5" />
+                        <path
+                            d="M284.294 161.066C244.782 161.066 218.868 187.578 211.812 200.834C225.496 229.912 253.505 288.582 256.071 290.634C258.637 292.687 298.619 291.489 318.289 290.634V306.67C319.316 309.749 321.71 310.946 322.779 311.16C331.759 312.015 353.44 313.854 368.321 314.367C386.922 315.008 399.751 311.16 406.165 290.634C412.579 270.108 411.938 212.38 399.751 188.647C390.001 169.661 351.857 162.349 336.249 161.066C333.47 168.977 327.911 182.233 309.951 182.233C291.991 182.233 286.004 168.977 284.294 161.066Z"
+                            fill="var(--primary-color)" />
+                        <path
+                            d="M80.3238 199.899C79.6741 197.457 81.5155 195.062 84.043 195.062H241.566C243.311 195.062 244.837 196.235 245.286 197.921L275.31 310.812C275.96 313.255 274.118 315.65 271.591 315.65H114.067C112.323 315.65 110.796 314.476 110.348 312.79L80.3238 199.899Z"
+                            fill="#F1F1F1" />
+                        <path
+                            d="M304.178 280.371C310.335 281.398 320.855 279.944 325.345 279.088C327.483 281.654 331.759 287.94 331.759 292.558C331.759 297.177 330.048 302.18 329.193 304.104C325.986 303.89 317.648 303.591 309.95 304.104C302.253 304.617 291.777 308.594 287.5 310.518L273.389 313.084L264.409 311.801L261.843 307.953L255.429 306.67L249.646 302.333C248.572 301.527 248.315 300.023 249.059 298.906C249.767 297.845 251.154 297.476 252.295 298.047L255.429 299.614H263.126L273.389 297.69H261.843L250.939 295.124L248.511 292.291C247.691 291.334 247.681 289.926 248.488 288.958C249.46 287.791 251.223 287.711 252.297 288.785L252.863 289.351L263.126 290.634L273.389 289.351H267.616L254.146 286.144L251.678 282.195C251.219 281.461 251.175 280.54 251.563 279.766C252.246 278.4 253.988 277.967 255.23 278.855L257.353 280.371L267.616 282.296L277.438 280.892C278.641 280.721 278.953 279.127 277.903 278.514L273.389 275.881L265.138 275.366C263.966 275.292 263.007 274.407 262.841 273.245C262.645 271.874 263.611 270.609 264.985 270.437L272.748 269.467C276.596 270.322 284.935 272.289 287.5 273.316C290.708 274.598 296.48 279.088 304.178 280.371Z"
+                            fill="#EFCB96" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M141.897 25.1352V15.462H144.463V25.1352H141.897ZM141.897 156.576V146.903H144.463V156.576H141.897Z"
+                            fill="#E5E5E5" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M203.975 84.7361L213.736 84.7361L213.736 87.3018L203.975 87.3018L203.975 84.7361ZM71.3396 84.7361L81.1006 84.7361L81.1006 87.3018L71.3396 87.3018L71.3396 84.7361Z"
+                            fill="#E5E5E5" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M175.207 137.878L180.2 146.232L177.998 147.549L173.004 139.194L175.207 137.878ZM107.354 24.3507L112.347 32.7055L110.145 34.0218L105.151 25.667L107.354 24.3507Z"
+                            fill="#E5E5E5" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M196.637 114.984L205.11 119.774L203.848 122.008L195.375 117.217L196.637 114.984ZM81.5046 49.893L89.9776 54.6832L88.7149 56.9167L80.2419 52.1264L81.5046 49.893Z"
+                            fill="#E5E5E5" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M88.7147 114.984L80.2417 119.774L81.5044 122.008L89.9774 117.217L88.7147 114.984ZM203.847 49.893L195.374 54.6832L196.637 56.9167L205.11 52.1264L203.847 49.893Z"
+                            fill="#E5E5E5" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M110.145 137.878L105.151 146.232L107.354 147.549L112.347 139.194L110.145 137.878ZM177.998 24.3507L173.004 32.7055L175.207 34.0218L180.2 25.667L177.998 24.3507Z"
+                            fill="#E5E5E5" />
+                        <path
+                            d="M189.362 257.28C189.362 266.136 182.183 273.316 173.327 273.316C164.47 273.316 157.291 266.136 157.291 257.28C157.291 248.424 164.47 241.244 173.327 241.244C182.183 241.244 189.362 248.424 189.362 257.28Z"
+                            fill="#E5E5E5" />
+                        <path
+                            d="M104.694 247.658V259.204H113.674V244.451C114.315 244.024 116.496 242.784 120.088 241.244C124.578 239.32 123.937 237.395 125.861 233.547C127.785 229.699 125.861 227.774 120.73 229.057C115.598 230.34 114.315 235.471 113.674 234.83C113.033 234.188 113.033 234.188 113.674 231.623C114.315 229.057 113.033 227.774 115.598 226.491C118.164 225.209 129.068 225.209 132.917 223.925C136.765 222.642 136.765 217.511 135.482 214.946C134.2 212.38 127.785 216.87 120.088 220.077C113.931 222.643 112.819 221.146 113.033 220.077V212.38C113.033 211.098 115.598 211.739 120.73 208.531C125.861 205.324 125.861 205.965 129.068 202.759C132.275 199.552 127.785 198.91 125.22 196.344C122.654 193.779 118.164 201.476 116.881 204.041C115.598 206.607 113.674 207.249 113.033 205.965C112.391 204.682 114.315 204.041 113.674 201.476C113.033 198.91 111.108 199.551 109.825 200.193C108.543 200.834 104.694 205.965 103.411 205.965C102.128 205.965 100.204 200.193 97.6383 196.344C94.3578 191.424 93.1484 191.854 89.2999 190.571C85.4514 189.288 89.9412 196.985 94.4313 205.965C98.0233 213.149 103.197 214.09 105.336 213.662C105.549 216.228 105.849 221.488 105.336 222.001C104.694 222.642 102.77 220.718 100.204 218.794C97.6384 216.87 98.2798 221.36 99.5627 223.925C100.589 225.978 103.839 227.774 105.336 228.415V236.113C105.336 238.037 105.977 238.678 102.77 237.395C99.5627 236.112 96.9969 227.774 93.1484 225.85C89.2998 223.925 89.2998 229.698 89.9412 236.113C90.4544 241.244 99.9902 245.948 104.694 247.658Z"
+                            fill="#FAC22F" />
+                        <path
+                            d="M79.0371 259.427C79.0371 258.596 79.7113 257.921 80.5431 257.921H135.26C136.091 257.921 136.766 258.596 136.766 259.427V286.786C136.766 302.727 123.843 315.65 107.901 315.65C91.9601 315.65 79.0371 302.727 79.0371 286.786V259.427Z"
+                            fill="#E5E5E5" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M362.833 264.656C362.721 265.012 362.532 265.524 362.172 265.884C361.913 266.143 361.561 266.324 361.311 266.441C361.017 266.579 360.658 266.722 360.254 266.867C359.445 267.158 358.374 267.489 357.113 267.849C354.585 268.57 351.213 269.427 347.462 270.33C339.957 272.138 330.878 274.144 323.864 275.642C323.863 275.644 323.861 275.646 323.858 275.649C323.838 275.674 323.803 275.737 323.788 275.839C323.773 275.94 323.784 276.037 323.81 276.109C323.834 276.175 323.862 276.201 323.878 276.212C328.066 279.155 333.042 284.631 333.042 292.558C333.042 302.619 329.08 309.64 326.94 312.018L325.033 310.302C326.741 308.403 330.476 301.997 330.476 292.558C330.476 285.8 326.236 281.005 322.403 278.311C321.399 277.605 321.109 276.416 321.249 275.465C321.39 274.51 322.035 273.409 323.323 273.134C330.328 271.637 339.385 269.636 346.861 267.836C350.601 266.935 353.932 266.088 356.409 265.382C357.649 265.028 358.656 264.715 359.386 264.452C359.752 264.321 360.028 264.209 360.22 264.119C360.261 264.1 360.294 264.083 360.321 264.069C360.338 264.027 360.361 263.966 360.387 263.882C360.473 263.609 360.566 263.215 360.66 262.695C360.846 261.66 361.015 260.242 361.159 258.535C361.446 255.129 361.626 250.673 361.666 246.044C361.706 241.416 361.606 236.638 361.338 232.589C361.066 228.481 360.629 225.291 360.059 223.723L362.47 222.846C363.183 224.806 363.629 228.35 363.898 232.42C364.171 236.549 364.272 241.393 364.231 246.066C364.191 250.738 364.01 255.262 363.716 258.751C363.569 260.492 363.392 262 363.185 263.15C363.082 263.722 362.966 264.235 362.833 264.656Z"
+                            fill="#46A4BC" />
+                        <path
+                            d="M150.877 85.3775C150.877 89.2742 147.718 92.4332 143.821 92.4332C139.924 92.4332 136.765 89.2742 136.765 85.3775C136.765 81.4807 139.924 78.3218 143.821 78.3218C147.718 78.3218 150.877 81.4807 150.877 85.3775Z"
+                            fill="#3E3D3D" />
+                    </svg>
+                    <h5>Get Upgrade</h5>
+                    <p class="lh-sm small text-muted">Step to the next level with more features.</p>
+                    <button class="btn btn-primary" type="button">Learn more</button>
+                </div>
+            </div>
         </div>
-
+        <!--[ sidebar: footer link ]-->
+        <ul class="menu-list nav navbar-nav bg-transparent">
+            <li>
+                <a class="m-link" data-bs-toggle="offcanvas" href="#need_help" role="button"
+                    aria-controls="need_help" title="Need Help?">
+                    <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <circle opacity="0.2" cx="11" cy="11" r="4" />
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                    </svg>
+                    <span class="mx-3">Need Help?</span>
+                </a>
+            </li>
+        </ul>
     </div>
-</aside>
+</aside> --}}
