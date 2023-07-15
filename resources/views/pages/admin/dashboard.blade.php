@@ -8,8 +8,8 @@
         <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <h3>$15K</h3>
-                    <p class="text-muted">67% <i class="fa fa-level-up text-success"></i> Total income</p>
+                    <h3>{{ $users }} </h3>
+                    <p class="text-muted"> <i class="fa fa-users text-success"></i> Total Users</p>
                     <div id="apexspark_bar_1"></div>
                 </div>
             </div>
@@ -17,8 +17,8 @@
         <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <h3>$1258</h3>
-                    <p class="text-muted">15% <i class="fa fa-level-up text-success"></i> Total Expense
+                    <h3>{{ $sites }} </h3>
+                    <p class="text-muted"><i class="fa fa-building text-success"></i> Total Sites
                     </p>
                     <div id="apexspark_bar_2"></div>
                 </div>
@@ -27,13 +27,13 @@
         <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-body">
-                    <h3>$2315</h3>
-                    <p class="text-muted">23% <i class="fa fa-level-up text-success"></i> Total Growth</p>
+                    <h3>{{ $plots }} </h3>
+                    <p class="text-muted"><i class="fa fa-building text-success"></i> Total Plots</p>
                     <div id="apexspark_bar_3"></div>
                 </div>
             </div>
         </div>
-        <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
+        {{-- <div class="col-xxl-3 col-xl-6 col-lg-3 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-body">
                     <h3>$1025</h3>
@@ -41,7 +41,7 @@
                     <div id="apexspark_bar_4"></div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 @endsection

@@ -27,9 +27,10 @@
 
                          <select class="form-control form-control-md custom-select">
                              <option value=""> Select Site </option>
-                             <option value="">India</option>
-                             <option value="">US</option>
-                             <option value="">UK</option>
+                             @foreach (SiteHelper::getSites() as $site)
+                                 <option value="{{ $site->id }}">{{ $site->name }}</option>
+                             @endforeach
+
                          </select>
 
                      </div>
