@@ -13,3 +13,4 @@ Route::group(['middleware' => 'guest'], function () {
 Route::fallback(function () {
     return redirect()->route('login');
 });
+

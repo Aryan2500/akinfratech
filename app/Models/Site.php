@@ -19,6 +19,11 @@ class Site extends Model
 
     public function investors()
     {
-        return $this->belongsToMany(User::class, 'site_investor' , 'site_id' , 'investor_id');
+        return $this->belongsToMany(User::class, 'site_investor', 'site_id', 'investor_id');
+    }
+
+    public function farmer()
+    {
+        return $this->belongsTo(Farmer::class);
     }
 }

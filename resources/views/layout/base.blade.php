@@ -51,11 +51,13 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
 
     <script src="{{ asset('assets/bundles/select2.bundle.js') }}"></script>
-    
+
     <script src="{{ asset('assets/js/login-form-validator.js') }}"></script>
 
     <!--[ Chart plugin url ]-->
-
+    <script>
+        $('.select2').select2();
+    </script>
     @stack('scripts')
 </body>
 

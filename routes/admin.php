@@ -4,6 +4,7 @@
 
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\PlotController;
 use App\Http\Controllers\PlottypeController;
 use App\Http\Controllers\RoleController;
@@ -48,6 +49,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::post('/update', [SiteController::class, 'update'])->name('site.update');
             // Route::get('/lock', [SiteController::class, 'lock'])->name('site.lock');
         });
+
+
+        Route::group(['prefix' => 'farmer'], function () {
+            Route::get('/', [FarmerController::class, 'index'])->name('farmer.list');
+            Route::get('/create', [FarmerController::class, 'create'])->name('farmer.create');
+            Route::post('/save', [FarmerController::class, 'store'])->name('farmer.store');
+            Route::get('/edit', [FarmerController::class, 'edit'])->name('farmer.edit');
+            Route::post('/update', [FarmerController::class, 'update'])->name('farmer.update');
+            Route::get('/lock', [FarmerController::class, 'lock'])->name('farmer.lock');
+        });
+
         Route::group(['prefix' => 'ptype'], function () {
             Route::get('/', [PlottypeController::class, 'index'])->name('plottype.list');
             Route::get('/create', [PlottypeController::class, 'create'])->name('plottype.create');

@@ -90,11 +90,13 @@
                      <ul class="sub-menu collapse {{ request()->is('admin/property-management*') ? 'show' : '' }}"
                          id="properyMenu">
                          <li><a class="ms-link {{ request()->is('admin/property-management/site*') ? 'active' : '' }}"
-                                 href="{{ route('site.list') }}">Site</a></li>
+                                 href="{{ route('site.list') }}">Sites</a></li>
+                         <li><a class="ms-link {{ request()->is('admin/property-management/farmer*') ? 'active' : '' }}"
+                                 href="{{ route('farmer.list') }}">Farmers</a></li>
                          <li><a class="ms-link {{ request()->is('admin/property-management/ptype*') ? 'active' : '' }}"
-                                 href="{{ route('plottype.list') }}">Plot Type</a></li>
+                                 href="{{ route('plottype.list') }}">Plot Types</a></li>
                          <li><a class="ms-link {{ request()->is('admin/property-management/plot*') ? 'active' : '' }}"
-                                 href="{{ route('plot.list') }}">Plot</a></li>
+                                 href="{{ route('plot.list') }}">Plots</a></li>
 
                      </ul>
                  </li>

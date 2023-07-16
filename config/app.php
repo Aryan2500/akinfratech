@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\LocationHelper;
 use App\Helpers\SiteHelper;
 use App\Helpers\UserHelper;
 use Illuminate\Support\Facades\Facade;
@@ -186,7 +187,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
         'UserHelper' => UserHelper::class,
-        'SiteHelper' => SiteHelper::class
+        'SiteHelper' => SiteHelper::class,
+        'LocationHelper' => LocationHelper::class
     ])->toArray(),
 
 ];
