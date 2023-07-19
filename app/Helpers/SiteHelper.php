@@ -7,7 +7,7 @@ use App\Models\Site;
 class SiteHelper
 {
 
-    public static function getSites()
+    public static function getAllSites()
     {
         return Site::all();
     }

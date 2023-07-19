@@ -93,6 +93,8 @@
                                  href="{{ route('site.list') }}">Sites</a></li>
                          <li><a class="ms-link {{ request()->is('admin/property-management/farmer*') ? 'active' : '' }}"
                                  href="{{ route('farmer.list') }}">Farmers</a></li>
+                         <li><a class="ms-link {{ request()->is('admin/property-management/land*') ? 'active' : '' }}"
+                                 href="{{ route('land.list') }}">Land</a></li>
                          <li><a class="ms-link {{ request()->is('admin/property-management/ptype*') ? 'active' : '' }}"
                                  href="{{ route('plottype.list') }}">Plot Types</a></li>
                          <li><a class="ms-link {{ request()->is('admin/property-management/plot*') ? 'active' : '' }}"

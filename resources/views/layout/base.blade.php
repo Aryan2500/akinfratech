@@ -22,7 +22,7 @@
     @yield('page_css')
 </head>
 
-<body class="qboat admin" data-qboat="theme-DodgerBlue">
+<body class="qboat admin" data-qboat="theme-DodgerBlue" style="height: 100%">
     <!--[ Start:: main sidebar menu link ]-->
     @include('partials.side-nav')
 
@@ -32,7 +32,7 @@
 
         @include('partials.greeting')
 
-        <main class="page-body">
+        <main class="page-body" style="height: 100%">
             <div class="container-fluid">
                 @yield('main_section')
             </div>

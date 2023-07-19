@@ -8,6 +8,14 @@ define('SITE_HEAD', 'Site_Head');
 define('ROLES', [
     ADMIN,
 ]);
+define('CASH', 'Cash');
+define('CHEQUE', 'Cheque');
+define('DD', 'DD');
+define('NEFT', 'NEFT/RTGS');
+define('CARD', 'Card');
+
+define('PAYMENT_MODE', [CASH, CHEQUE, DD, NEFT, CARD]);
+
 
 define('USER_TYPES', [ADMIN, AGENT, SITE_HEAD, INVESTOR]);
 

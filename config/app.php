@@ -1,6 +1,8 @@
 <?php
 
+use App\Helpers\FarmerHelper;
 use App\Helpers\LocationHelper;
+use App\Helpers\PLotHelper;
 use App\Helpers\SiteHelper;
 use App\Helpers\UserHelper;
 use Illuminate\Support\Facades\Facade;
@@ -188,7 +190,9 @@ return [
         // 'Example' => App\Facades\Example::class,
         'UserHelper' => UserHelper::class,
         'SiteHelper' => SiteHelper::class,
-        'LocationHelper' => LocationHelper::class
+        'LocationHelper' => LocationHelper::class,
+        'FarmerHelper' => FarmerHelper::class,
+        'PlotHelper' => PlotHelper::class,
     ])->toArray(),
 
 ];

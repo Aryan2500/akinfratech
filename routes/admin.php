@@ -5,6 +5,7 @@
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FarmerController;
+use App\Http\Controllers\LandController;
 use App\Http\Controllers\PlotController;
 use App\Http\Controllers\PlottypeController;
 use App\Http\Controllers\RoleController;
@@ -50,7 +51,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             // Route::get('/lock', [SiteController::class, 'lock'])->name('site.lock');
         });
 
-
         Route::group(['prefix' => 'farmer'], function () {
             Route::get('/', [FarmerController::class, 'index'])->name('farmer.list');
             Route::get('/create', [FarmerController::class, 'create'])->name('farmer.create');
@@ -58,6 +58,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::get('/edit', [FarmerController::class, 'edit'])->name('farmer.edit');
             Route::post('/update', [FarmerController::class, 'update'])->name('farmer.update');
             Route::get('/lock', [FarmerController::class, 'lock'])->name('farmer.lock');
+        });
+        Route::group(['prefix' => 'land'], function () {
+            Route::get('/', [LandController::class, 'index'])->name('land.list');
+            Route::get('/create', [LandController::class, 'create'])->name('land.create');
+            Route::post('/save', [LandController::class, 'store'])->name('land.store');
+            Route::get('/edit', [LandController::class, 'edit'])->name('land.edit');
+            Route::post('/update', [LandController::class, 'update'])->name('land.update');
+            Route::get('/lock', [LandController::class, 'lock'])->name('land.lock');
         });
 
         Route::group(['prefix' => 'ptype'], function () {

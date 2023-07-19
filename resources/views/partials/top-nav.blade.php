@@ -27,7 +27,7 @@
 
                          <select class="form-control form-control-md custom-select">
                              <option value=""> Select Site </option>
-                             @foreach (SiteHelper::getSites() as $site)
+                             @foreach (SiteHelper::getAllSites() as $site)
                                  <option value="{{ $site->id }}">{{ $site->name }}</option>
                              @endforeach
 
