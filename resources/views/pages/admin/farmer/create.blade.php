@@ -15,7 +15,7 @@
                         <label class="form-label">Select Site</label>
                         <select class="form-control show-tick   select2" data-placeholder="Select" name="site_id">
                             <option id="">--Select--</option>
-                            @foreach (SiteHelper::getSites() as $s)
+                            @foreach (SiteHelper::getAllSites() as $s)
                                 <option value="{{ $s->id }}">{{ $s->name }}</option>
                             @endforeach
                         </select>

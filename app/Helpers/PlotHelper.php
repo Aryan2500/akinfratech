@@ -12,4 +12,9 @@ class PlotHelper
     {
         return Plot::all();
     }
+
+    public static function getPlotsOfSite($site)
+    {
+        return Plot::where(['site_id' => $site])->count();
+    }
 }

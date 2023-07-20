@@ -25,7 +25,7 @@
 
                      <div class="row" style="width: 100%">
 
-                         <select class="form-control form-control-md custom-select">
+                         <select class="form-control form-control-md custom-select" id="top_select_site">
                              <option value=""> Select Site </option>
                              @foreach (SiteHelper::getAllSites() as $site)
                                  <option value="{{ $site->id }}">{{ $site->name }}</option>

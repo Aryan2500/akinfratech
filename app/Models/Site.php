@@ -26,4 +26,9 @@ class Site extends Model
     {
         return $this->belongsTo(Farmer::class);
     }
+
+    public function farmers()
+    {
+        return $this->belongsToMany(Farmer::class);
+    }
 }

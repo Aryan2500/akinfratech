@@ -11,4 +11,6 @@ class SiteHelper
     {
         return Site::all();
     }
+
+    // public getAllS
 }

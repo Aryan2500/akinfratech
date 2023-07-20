@@ -1,6 +1,7 @@
 <?php
 
 use App\Helpers\LocationHelper;
+use App\Http\Controllers\DashboardApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,6 @@ Route::get('states', function (Request $r) {
 Route::get('cities', function (Request $r) {
     return response()->json(['cities' =>   LocationHelper::getCities($r->sId)]);
 })->name('getCities');
+
+
+Route::get('dashboard-info', [DashboardApiController::class, 'dashboardInfo'])->name('dashboardInfo');
