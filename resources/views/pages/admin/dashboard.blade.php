@@ -81,7 +81,7 @@
             <div class="card" data-bs-toggle="modal" data-bs-target="#plotModal" style="cursor: pointer">
                 <div class="card-body">
                     <h3 id="numberOfPlots">{{ $plots }} </h3>
-                    <p class="text-muted"><i class="fa fa-building text-success"></i> Total Plots</p>
+                    <p class="text-muted"><i class="fa fa-building text-success"></i> Plots</p>
                     <div id="apexspark_bar_3"></div>
                 </div>
             </div>
@@ -90,7 +90,7 @@
             <div class="card" data-bs-toggle="modal" data-bs-target="#farmerModal" style="cursor: pointer">
                 <div class="card-body">
                     <h3 id="NumberOffarmer">{{ $farmers }} </h3>
-                    <p class="text-muted"><i class="fa fa-building text-success"></i> Total Farmer</p>
+                    <p class="text-muted"><i class="fa fa-building text-success"></i> Farmer</p>
                     <div id="apexspark_bar_3"></div>
                 </div>
             </div>
