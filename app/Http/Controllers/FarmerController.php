@@ -19,8 +19,8 @@ class FarmerController extends Controller
     public function  create()
     {
         $page_heading = 'Create a new Farmer';
-
-        return view('pages.admin.farmer.create', compact('page_heading'));
+        $farmer = null;
+        return view('pages.admin.farmer.create', compact('page_heading', 'farmer'));
     }
     public function store(Request $req)
     {
@@ -40,11 +40,33 @@ class FarmerController extends Controller
             return redirect()->route('farmer.list')->with('error', 'something went wrong' . $th->getMessage());
         }
     }
-    public function edit()
+    public function edit($id)
     {
+        $page_heading = 'Update Farmer';
+
+        $farmer = Farmer::find($id);
+        return view('pages.admin.farmer.edit', compact('farmer', 'page_heading'));
     }
-    public function update()
+    public function update(Request $req)
     {
+        // dd($req->all());
+        $farmer = Farmer::find($req->id);
+        $farmer->sites()->detach($farmer->sites);
+
+        try {
+            $farmer->update([
+                'name' => $req->name,
+                'state_id' => $req->state_id,
+                'city_id' => $req->city_id,
+                'country_id' => $req->country_id,
+                'address' => $req->address,
+                'phone' => $req->phone,
+            ]);
+            $farmer->sites()->attach($req->site_id);
+            return redirect()->route('farmer.list')->with('success', 'Farmer updated successfully');
+        } catch (QueryException $th) {
+            return redirect()->route('farmer.list')->with('error', 'something went wrong' . $th->getMessage());
+        }
     }
     public function lock()
     {

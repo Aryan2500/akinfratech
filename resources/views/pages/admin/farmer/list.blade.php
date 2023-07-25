@@ -35,7 +35,7 @@
                                 <td>{{ $f->phone }}</td>
                                 <td>{{ $f->address }}</td>
                                 <td>
-                                    <button class="btn btn-primary">Edit</button>
+                                    <a class="btn btn-primary" href="{{ route('farmer.edit', $f->id) }}">Edit</a>
                                     <button class="btn btn-danger">Lock</button>
                                 </td>
                             </tr>

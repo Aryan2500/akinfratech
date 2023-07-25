@@ -16,4 +16,14 @@ class UserHelper
     {
         return User::all();
     }
+
+    public static function checkReferCodeExist($code)
+    {
+        $u = User::where('refer_code', $code)->first();
+        if ($u) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

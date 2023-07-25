@@ -21,10 +21,9 @@ class LandController extends Controller
     public function create()
     {
         $page_heading = 'Create land';
-        $sites = Site::all();
-        $farmers = Farmer::all();
         // dd($site_heads[0]->type);
-        return view('pages.admin.land.create', compact('page_heading', 'sites', 'farmers'));
+        $land = null;
+        return view('pages.admin.land.create', compact('page_heading', 'sites', 'farmers', 'land'));
     }
     public function store(Request $req)
     {
@@ -52,10 +51,38 @@ class LandController extends Controller
             return redirect()->back()->with('error', 'something went wrong');
         }
     }
-    public function update()
+
+    public function edit($id)
     {
+        $page_heading = 'Update land';
+
+        $land = Land::find($id);
+
+        return view('pages.admin.land.edit', compact('land', 'page_heading'));
     }
-    public function edit()
+
+    public function update(Request $req)
     {
+        $land = Land::find($req->id)->update([
+            'khasra_numbers' => $req->khasra_number,
+            'rakba' => $req->rakba,
+            'area' => $req->area,
+            'registry_status' => $req->registry_status,
+            'payble_amount' => $req->payble_amount,
+            'paid_amount' => $req->paid_amount,
+            'balance_amount' => $req->balance_amount,
+            'payment_mode' => $req->payment_mode,
+            'payment_date' => $req->payment_date,
+            'remark' => $req->remark,
+            'user_id' => Auth::user()->id,
+            'site_id' => $req->site_id,
+            'farmer_id' => $req->farmer_id
+        ]);
+
+        if ($land) {
+            return redirect()->route('land.list')->with('success', 'land updated successfully');
+        } else {
+            return redirect()->back()->with('error', 'something went wrong');
+        }
     }
 }

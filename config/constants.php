@@ -5,6 +5,8 @@ define('AGENT', 'Agent');
 define('INVESTOR', 'Investor');
 define('SITE_HEAD', 'Site_Head');
 
+define('REFER_CODE_PREFIX', 'AKINFRATECH');
+
 define('ROLES', [
     ADMIN,
 ]);
@@ -13,6 +15,7 @@ define('CHEQUE', 'Cheque');
 define('DD', 'DD');
 define('NEFT', 'NEFT/RTGS');
 define('CARD', 'Card');
+
 
 define('PAYMENT_MODE', [CASH, CHEQUE, DD, NEFT, CARD]);
 

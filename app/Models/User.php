@@ -23,7 +23,10 @@ class User extends Authenticatable
         'password',
         'usertype_id',
         'parent_id',
-        'phone'
+        'phone',
+        'refer_code',
+        'parent_refer_code',
+        'address',
     ];
 
     /**

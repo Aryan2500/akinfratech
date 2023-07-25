@@ -29,8 +29,8 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->type->name }}</td>
                                 <td>
-                                    <button class="btn btn-primary"
-                                        {{ Auth::user()->id == $user->id ? 'disabled' : '' }}>Edit</button>
+                                    <a class="btn btn-primary" href="{{ route('user.edit', $user->id) }}"
+                                        {{ Auth::user()->id == $user->id ? 'disabled' : '' }}>Edit</a>
                                     <button class="btn btn-danger"
                                         {{ Auth::user()->id == $user->id ? 'disabled' : '' }}>Lock</button>
                                 </td>

@@ -14,7 +14,6 @@ use App\Http\Controllers\UserController;
 use App\Models\Site;
 use Illuminate\Support\Facades\Route;
 
-
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('dashboard',  [DashboardController::class, 'index'])->name('dashboard');
     Route::get('logout', [AuthenticateController::class, 'logout'])->name('logout');
@@ -26,7 +25,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::get('/', [UserController::class, 'index'])->name('user.list');
             Route::get('/create', [UserController::class, 'create'])->name('user.create');
             Route::post('/save', [UserController::class, 'store'])->name('user.store');
-            Route::get('/edit', [UserController::class, 'edit'])->name('user.edit');
+            Route::get('/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
             Route::post('/update', [UserController::class, 'update'])->name('user.update');
             Route::get('/lock', [UserController::class, 'lock'])->name('user.lock');
         });
@@ -55,7 +54,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::get('/', [FarmerController::class, 'index'])->name('farmer.list');
             Route::get('/create', [FarmerController::class, 'create'])->name('farmer.create');
             Route::post('/save', [FarmerController::class, 'store'])->name('farmer.store');
-            Route::get('/edit', [FarmerController::class, 'edit'])->name('farmer.edit');
+            Route::get('/edit/{id}', [FarmerController::class, 'edit'])->name('farmer.edit');
             Route::post('/update', [FarmerController::class, 'update'])->name('farmer.update');
             Route::get('/lock', [FarmerController::class, 'lock'])->name('farmer.lock');
         });
@@ -63,7 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::get('/', [LandController::class, 'index'])->name('land.list');
             Route::get('/create', [LandController::class, 'create'])->name('land.create');
             Route::post('/save', [LandController::class, 'store'])->name('land.store');
-            Route::get('/edit', [LandController::class, 'edit'])->name('land.edit');
+            Route::get('/edit/{id}', [LandController::class, 'edit'])->name('land.edit');
             Route::post('/update', [LandController::class, 'update'])->name('land.update');
             Route::get('/lock', [LandController::class, 'lock'])->name('land.lock');
         });

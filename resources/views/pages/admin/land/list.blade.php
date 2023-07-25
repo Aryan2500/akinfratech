@@ -45,7 +45,7 @@
                                 <td>{{ $land->remark }}</td>
                                 <td>{{ $land->payment_date }}</td>
                                 <td>
-                                    <button class="btn btn-primary">Edit</button>
+                                    <a class="btn btn-primary" href="{{ route('land.edit', $land->id) }}">Edit</a>
                                     <button class="btn btn-danger">Lock</button>
                                 </td>
                             </tr>
