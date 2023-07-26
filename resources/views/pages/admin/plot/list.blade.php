@@ -47,7 +47,7 @@
                                 <td>{{ $plot->price }} </td>
 
                                 <td>
-                                    <button class="btn btn-primary">Edit</button>
+                                    <a class="btn btn-primary" href="{{ route('plot.edit', $plot->id) }}">Edit</a>
                                     <button class="btn btn-danger">Lock</button>
                                 </td>
                             </tr>
