@@ -18,8 +18,8 @@ class PlottypeController extends Controller
     public function create()
     {
         $page_heading = 'Create plot type';
-
-        return view('pages.admin.plottype.create', compact('page_heading'));
+        $ptype = null;
+        return view('pages.admin.plottype.create', compact('page_heading', 'ptype'));
     }
     public function store(Request $req)
     {
@@ -33,10 +33,24 @@ class PlottypeController extends Controller
             return redirect()->back()->with('error', 'something went wrong');
         }
     }
-    public function update()
+
+    public function edit($id)
     {
+        $ptype = Plottype::find($id);
+        $page_heading = "Update Plot Type";
+        return view('pages.admin.plottype.edit', compact('ptype', 'page_heading'));
     }
-    public function edit()
+
+    public function update(Request $req)
     {
+        $site = Plottype::find($req->id)->update([
+            'name' => $req->name,
+            'user_id' => Auth::user()->id,
+        ]);
+        if ($site) {
+            return redirect()->route('plottype.list')->with('success', 'plot type updated successfully');
+        } else {
+            return redirect()->back()->with('error', 'something went wrong');
+        }
     }
 }

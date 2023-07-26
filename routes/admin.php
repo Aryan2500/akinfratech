@@ -71,7 +71,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::get('/', [PlottypeController::class, 'index'])->name('plottype.list');
             Route::get('/create', [PlottypeController::class, 'create'])->name('plottype.create');
             Route::post('/save', [PlottypeController::class, 'store'])->name('plottype.store');
-            Route::get('/edit', [PlottypeController::class, 'edit'])->name('plottype.edit');
+            Route::get('/edit/{id}', [PlottypeController::class, 'edit'])->name('plottype.edit');
             Route::post('/update', [PlottypeController::class, 'update'])->name('plottype.update');
             // Route::get('/lock', [SiteController::class, 'lock'])->name('site.lock');
         });

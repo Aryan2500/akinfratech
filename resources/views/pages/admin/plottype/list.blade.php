@@ -27,7 +27,7 @@
                                 <td>{{ $type->name }}</td>
 
                                 <td>
-                                    <button class="btn btn-primary">Edit</button>
+                                    <a class="btn btn-primary" href="{{ route('plottype.edit', $type->id) }}">Edit</a>
                                     <button class="btn btn-danger">Lock</button>
                                 </td>
                             </tr>
