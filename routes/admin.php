@@ -3,14 +3,17 @@
 <?php
 
 use App\Http\Controllers\AuthenticateController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\LandController;
 use App\Http\Controllers\PlotController;
+use App\Http\Controllers\PlotregistryController;
 use App\Http\Controllers\PlottypeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
+use App\Models\Plotregistry;
 use App\Models\Site;
 use Illuminate\Support\Facades\Route;
 
@@ -83,6 +86,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::get('/edit/{id}', [PlotController::class, 'edit'])->name('plot.edit');
             Route::post('/update', [PlotController::class, 'update'])->name('plot.update');
             // Route::post('/lock', [PlotController::class, 'lock'])->name('plot.lock');
+        });
+    });
+    Route::group(['prefix' => 'booking-management'], function () {
+
+        Route::group(['prefix' => 'plot-registry'], function () {
+            Route::get('/', [PlotregistryController::class, 'index'])->name('plot-registry.list');
+            Route::get('/create', [PlotregistryController::class, 'create'])->name('plot-registry.create');
+            Route::post('/save', [PlotregistryController::class, 'store'])->name('plot-registry.store');
+            Route::get('/edit/{id}', [PlotregistryController::class, 'edit'])->name('plot-registry.edit');
+            Route::post('/update', [PlotregistryController::class, 'update'])->name('plot-registry.update');
         });
     });
 });

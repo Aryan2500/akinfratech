@@ -23,7 +23,7 @@ class LandController extends Controller
         $page_heading = 'Create land';
         // dd($site_heads[0]->type);
         $land = null;
-        return view('pages.admin.land.create', compact('page_heading', 'sites', 'farmers', 'land'));
+        return view('pages.admin.land.create', compact('page_heading', 'land'));
     }
     public function store(Request $req)
     {

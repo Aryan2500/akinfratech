@@ -33,28 +33,28 @@
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="area" placeholder="Name"
-                    value="{{ $land->area }}">
+                    value="{{ $land ? $land->area : '' }}">
                 <label class="form-label" for="TextInput">Area</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="khasra_number" placeholder="Name"
-                    value="{{ $land->khasra_numbers }}">
+                    value="{{ $land ? $land->khasra_numbers : '' }}">
                 <label class="form-label" for="TextInput">Khasra Number</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="rakba" placeholder="Name"
-                    value="{{ $land->rakba }}">
+                    value="{{ $land ? $land->rakba : '' }}">
                 <label class="form-label" for="TextInput">Rakba</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="payble_amount" placeholder="Name"
-                    value="{{ $land->payble_amount }}">
+                    value="{{ $land ? $land->payble_amount : '' }}">
                 <label class="form-label" for="TextInput">Payble Amount</label>
             </span>
         </div>
