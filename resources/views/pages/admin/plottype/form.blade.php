@@ -5,7 +5,7 @@
         <div class="col-6">
             <span class="float-label mt-2">
                 <input type="text" class="form-control form-control-lg" id="TextInput" name="name" placeholder="Name"
-                    value="{{ $ptype ? $ptype->name : '' }}">
+                    value="{{ $ptype ? $ptype->name : '' }}" required>
                 <label class="form-label" for="TextInput">Name</label>
             </span>
         </div>

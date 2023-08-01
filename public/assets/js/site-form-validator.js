@@ -15,6 +15,14 @@ $(document).ready(function () {
             sitehead_id: {
                 required: true,
             },
+
+            amount: {
+                required: true
+            }
+            ,
+            investor_id: {
+                required: true
+            }
         },
         messages: {
 
@@ -30,6 +38,13 @@ $(document).ready(function () {
             total_size: {
                 required: "Please enter total size",
 
+            },
+            amount: {
+                required: "Please enter amount"
+            }
+            ,
+            investor_id: {
+                required: "select investor"
             }
         },
         submitHandler: function (form) {

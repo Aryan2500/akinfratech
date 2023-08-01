@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-6 ">
             <label class="form-group float-label">
-                <select class="form-control form-control-lg custom-select" name="site_id">
+                <select class="form-control form-control-lg custom-select" name="site_id" required>
                     <option value="">Choose Site Head</option>
                     @foreach (SiteHelper::getAllSites() as $site)
                         <option value="{{ $site->id }}"
@@ -19,7 +19,7 @@
 
         <div class="col-6">
             <label class="form-group float-label">
-                <select class="form-control form-control-lg custom-select" name="plot_id">
+                <select class="form-control form-control-lg custom-select" name="plot_id" required>
                     <option value="">Choose Plot</option>
                     @foreach (PlotHelper::getAllPlots() as $plot)
                         <option value="{{ $plot->id }}"
@@ -35,35 +35,35 @@
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="booking_id" placeholder="Booking Id"
-                    value="{{ $registry ? $registry->booking_id : '' }}">
+                    required value="{{ $registry ? $registry->booking_id : '' }}">
                 <label class="form-label" for="TextInput">Booking ID</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="customer_id" placeholder="Customer ID"
-                    value="{{ $registry ? $registry->customer_id : '' }}">
+                    required value="{{ $registry ? $registry->customer_id : '' }}">
                 <label class="form-label" for="TextInput">Customer ID</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="customer_name"
-                    placeholder="Customer Name" value="{{ $registry ? $registry->customer_name : '' }}">
+                    placeholder="Customer Name" value="{{ $registry ? $registry->customer_name : '' }}" required>
                 <label class="form-label" for="TextInput">Customer Name</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="gata_number" placeholder="Gata Number"
-                    value="{{ $registry ? $registry->gata_number : '' }}">
+                    required value="{{ $registry ? $registry->gata_number : '' }}">
                 <label class="form-label" for="TextInput">Gata Number</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="saler_name" placeholder="Saler Name"
-                    value="{{ $registry ? $registry->saler_name : '' }}">
+                    required value="{{ $registry ? $registry->saler_name : '' }}">
                 <label class="form-label" for="TextInput">Saler Name</label>
             </span>
         </div>
@@ -71,7 +71,7 @@
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="register_number"
-                    placeholder="Register Number" value="{{ $registry ? $registry->register_number : '' }}">
+                    placeholder="Register Number" value="{{ $registry ? $registry->register_number : '' }}" required>
                 <label class="form-label" for="TextInput">Register Number</label>
             </span>
         </div>
@@ -79,21 +79,21 @@
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="discount_amount"
-                    placeholder="Discount Amount" value="{{ $registry ? $registry->discount_amount : '' }}">
+                    placeholder="Discount Amount" value="{{ $registry ? $registry->discount_amount : '' }}" required>
                 <label class="form-label" for="TextInput">Discount Amount</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="balance_amount"
-                    placeholder="Balance Amount" value="{{ $registry ? $registry->balance_amount : '' }}">
+                    placeholder="Balance Amount" value="{{ $registry ? $registry->balance_amount : '' }}" required>
                 <label class="form-label" for="TextInput">Discount Amount</label>
             </span>
         </div>
         <div class="col-6">
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="paid_amount" placeholder="Paid Amount"
-                    value="{{ $registry ? $registry->paid_amount : '' }}">
+                    value="{{ $registry ? $registry->paid_amount : '' }}" required>
                 <label class="form-label" for="TextInput">Paid Amount</label>
             </span>
         </div>

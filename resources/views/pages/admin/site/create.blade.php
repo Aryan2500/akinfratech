@@ -51,14 +51,14 @@
 
                                     <span class="float-label">
                                         <input type="number" class="form-control form-control  form-control-lg"
-                                            name="amount[]" placeholder="Total Size">
+                                            name="amount[]" placeholder="Total Size" required>
                                         <label class="form-label" for="TextInput">Amount Invested</label>
                                     </span>
 
                                 </div>
                                 <div class="col-5">
                                     <label class="form-group float-label">
-                                        <select class="form-control form-control-lg custom-select" name="investor_id[]">
+                                        <select class="form-control form-control-lg custom-select" required name="investor_id[]">
                                             <option value="">Choose Investor</option>
                                             @foreach ($site_heads as $head)
                                                 @if ($head->type->name == INVESTOR)
@@ -86,6 +86,9 @@
     </div>
 @endsection
 
+@push('scripts')
+    <script src=""></script>
+@endpush
 
 @push('scripts')
     <script src="{{ asset('assets/js/site-form-validator.js') }}"></script>

@@ -8,7 +8,7 @@
             <h6 class="card-title mb-0">Create Farmer</h6>
         </div>
         <div class="card-body">
-            <form class="row g-3 maskking-form" id="userForm" method="post" action="{{ route('farmer.store') }}">
+            <form class="row g-3 maskking-form" id="farmerForm" method="post" action="{{ route('farmer.store') }}">
                 @csrf
                 @include('pages.admin.farmer.form')
 
@@ -21,7 +21,7 @@
 
 
 @push('scripts')
-    {{-- <script src="{{ asset('assets/js/user-create-form-validator.js') }}"></script> --}}
+    <script src="{{ asset('assets/js/farmer-form-validator.js') }}"></script>
     <script>
         $("#country_select").change(function(e) {
 
