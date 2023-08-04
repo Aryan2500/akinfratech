@@ -19,7 +19,13 @@ class AuthenticateController extends Controller
         $data = $req->only('email', 'password');
 
         if (Auth::attempt($data)) {
-            return redirect()->route('dashboard');
+            // dd(Auth::user()->type->name);
+            if (Auth::user()->type->name == SITE_HEAD) {
+                return redirect()->route('sh.dashboard');
+            }
+            if (Auth::user()->type->name == ADMIN) {
+                return redirect()->route('dashboard');
+            }
         } else {
             return redirect()->back()->with('error', 'Invalid creadentials')->withInput();
         }

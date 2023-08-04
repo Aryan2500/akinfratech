@@ -28,8 +28,8 @@
                  </li>
                  <!--[ Start:: dashboard ]-->
                  <li class="collapsed">
-                     <a class="m-link  {{ request()->is('admin/dashboard') ? 'active' : '' }}" data-bs-toggle="collapse"
-                         data-bs-target="#menu_dashboard" href="#">
+                     <a class="m-link  {{ request()->is('site-head/dashboard') ? 'active' : '' }}"
+                         data-bs-toggle="collapse" data-bs-target="#menu_dashboard" href="#">
                          <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                              <path opacity="0.2"
                                  d="M8.186 1.11303C8.06662 1.06519 7.93338 1.06519 7.814 1.11303L1.846 3.50003L8 5.96103L14.154 3.50003L8.186 1.11303ZM15 4.23903L8.5 6.83903V14.761L15 12.161V4.24003V4.23903ZM7.5 14.762V6.83803L1 4.23903V12.162L7.5 14.762V14.762ZM7.443 0.184033C7.80057 0.041032 8.19943 0.041032 8.557 0.184033L15.686 3.03603C15.7787 3.07318 15.8581 3.13723 15.9141 3.21992C15.9701 3.30262 16 3.40018 16 3.50003V12.162C15.9999 12.3619 15.9399 12.5571 15.8278 12.7225C15.7157 12.8879 15.5566 13.0159 15.371 13.09L8.186 15.964C8.06662 16.0119 7.93338 16.0119 7.814 15.964L0.63 13.09C0.444251 13.0161 0.284942 12.8881 0.172642 12.7227C0.0603417 12.5573 0.000206329 12.362 0 12.162L0 3.50003C2.32399e-05 3.40018 0.0299437 3.30262 0.085907 3.21992C0.14187 3.13723 0.221313 3.07318 0.314 3.03603L7.443 0.184033Z" />
@@ -39,16 +39,16 @@
                          <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                      </a>
                      <!-- Menu: Sub menu ul -->
-                     <ul class="sub-menu collapse  {{ request()->is('admin/dashboard') ? 'show' : '' }}"
+                     <ul class="sub-menu collapse  {{ request()->is('site-head/dashboard') ? 'show' : '' }}"
                          id="menu_dashboard">
-                         <li><a class="ms-link {{ request()->is('admin/dashboard') ? 'active' : '' }}"
-                                 href="{{ route('dashboard') }}">My
+                         <li><a class="ms-link {{ request()->is('site-head/dashboard') ? 'active' : '' }}"
+                                 href="{{ route('sh.dashboard') }}">My
                                  Dashboard</a></li>
                      </ul>
                  </li>
-                 <!--[ Start:: Account ]-->
+
                  <li class="collapsed">
-                     <a class="m-link {{ request()->is('admin/user-management*') ? 'active' : '' }}"
+                     <a class="m-link {{ request()->is('site-head/user-management*') ? 'active' : '' }}"
                          data-bs-toggle="collapse" data-bs-target="#menu_apps" href="#">
                          <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                              <path opacity="0.7"
@@ -66,16 +66,17 @@
                          <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                      </a>
                      <!-- Menu: Sub menu ul -->
-                     <ul class="sub-menu collapse {{ request()->is('admin/user-management*') ? 'show' : '' }}"
+                     <ul class="sub-menu collapse {{ request()->is('site-head/user-management*') ? 'show' : '' }}"
                          id="menu_apps">
-                         <li><a class="ms-link {{ request()->is('admin/user-management/user*') ? 'active' : '' }}"
+                         <li><a class="ms-link {{ request()->is('site-head/user-management/user*') ? 'active' : '' }}"
                                  href="{{ route('user.list') }}">Users</a></li>
-                         <li><a class="ms-link {{ request()->is('admin/user-management/role*') ? 'active' : '' }}"
-                                 href="{{ route('role.list') }}">Roles</a></li>
+                         {{-- <li><a class="ms-link {{ request()->is('site-head/user-management/role*') ? 'active' : '' }}"
+                                 href="{{ route('role.list') }}">Roles</a></li> --}}
+
                      </ul>
                  </li>
                  <li class="collapsed">
-                     <a class="m-link {{ request()->is('admin/property-management*') ? 'active' : '' }}"
+                     <a class="m-link {{ request()->is('site-head/property-management*') ? 'active' : '' }}"
                          data-bs-toggle="collapse" data-bs-target="#properyMenu" href="#">
                          <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                              <path opacity="0.2"
@@ -86,23 +87,23 @@
                          <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                      </a>
                      <!-- Menu: Sub menu ul -->
-                     <ul class="sub-menu collapse {{ request()->is('admin/property-management*') ? 'show' : '' }}"
+                     <ul class="sub-menu collapse {{ request()->is('site-head/property-management*') ? 'show' : '' }}"
                          id="properyMenu">
-                         <li><a class="ms-link {{ request()->is('admin/property-management/site*') ? 'active' : '' }}"
+                         <li><a class="ms-link {{ request()->is('site-head/property-management/site*') ? 'active' : '' }}"
                                  href="{{ route('site.list') }}">Sites</a></li>
-                         <li><a class="ms-link {{ request()->is('admin/property-management/farmer*') ? 'active' : '' }}"
+                         <li><a class="ms-link {{ request()->is('site-head/property-management/farmer*') ? 'active' : '' }}"
                                  href="{{ route('farmer.list') }}">Farmers</a></li>
-                         <li><a class="ms-link {{ request()->is('admin/property-management/land*') ? 'active' : '' }}"
+                         <li><a class="ms-link {{ request()->is('site-head/property-management/land*') ? 'active' : '' }}"
                                  href="{{ route('land.list') }}">Land</a></li>
-                         <li><a class="ms-link {{ request()->is('admin/property-management/ptype*') ? 'active' : '' }}"
+                         <li><a class="ms-link {{ request()->is('site-head/property-management/ptype*') ? 'active' : '' }}"
                                  href="{{ route('plottype.list') }}">Plot Types</a></li>
-                         <li><a class="ms-link {{ request()->is('admin/property-management/plot*') ? 'active' : '' }}"
+                         <li><a class="ms-link {{ request()->is('site-head/property-management/plot*') ? 'active' : '' }}"
                                  href="{{ route('plot.list') }}">Plots</a></li>
 
                      </ul>
                  </li>
                  <li class="collapsed">
-                     <a class="m-link {{ request()->is('admin/booking-management*') ? 'active' : '' }}"
+                     <a class="m-link {{ request()->is('site-head/booking-management*') ? 'active' : '' }}"
                          data-bs-toggle="collapse" data-bs-target="#bookingMenu" href="#">
                          <svg width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
                              fill="currentColor">
@@ -114,13 +115,14 @@
                          <span class="arrow fa fa-angle-down ms-auto text-end"></span>
                      </a>
                      <!-- Menu: Sub menu ul -->
-                     <ul class="sub-menu collapse {{ request()->is('admin/booking-management*') ? 'show' : '' }}"
+                     <ul class="sub-menu collapse {{ request()->is('site-head/booking-management*') ? 'show' : '' }}"
                          id="bookingMenu">
-                         <li><a class="ms-link {{ request()->is('admin/booking-management/plot-registry*') ? 'active' : '' }}"
+                         <li><a class="ms-link {{ request()->is('site-head/booking-management/plot-registry*') ? 'active' : '' }}"
                                  href="{{ route('plot-registry.create') }}">New Plot Registry</a></li>
 
                      </ul>
                  </li>
+
 
              </ul>
 

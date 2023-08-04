@@ -1,4 +1,5 @@
-@extends('layout.base')
+@extends('layout.' . $layoutfor)
+
 
 @section('main_section')
     <div class="card mb-4">

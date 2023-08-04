@@ -1,4 +1,5 @@
-@extends('layout.base')
+@extends('layout.' . $layoutfor)
+
 
 @section('main_section')
     <div class="card mb-4">
@@ -31,15 +32,20 @@
                     </div>
                     <div class="col-6 mt-4">
                         <label class="form-group float-label">
-                            <select class="form-control form-control-lg custom-select" name="sitehead_id">
-                                <option value="">Choose Site Head</option>
-                                @foreach ($site_heads as $head)
-                                    @if ($head->type->name == SITE_HEAD)
-                                        <option value="{{ $head->id }}">{{ $head->name }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                            <span>SIte Head</span>
+                            @if (UserHelper::checkIfSiteHead())
+                                <input type="hidden" class="form-control form-control-lg" name="sitehead_id"
+                                    value="{{ Auth::user()->id }}" placeholder="Total Size">
+                            @else
+                                <select class="form-control form-control-lg custom-select" name="sitehead_id">
+                                    <option value="">Choose Site Head</option>
+                                    @foreach ($site_heads as $head)
+                                        @if ($head->type->name == SITE_HEAD)
+                                            <option value="{{ $head->id }}">{{ $head->name }}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                                <span>SIte Head</span>
+                            @endif
                         </label>
                     </div>
                     <div class="col-12 mt-4">
@@ -58,7 +64,8 @@
                                 </div>
                                 <div class="col-5">
                                     <label class="form-group float-label">
-                                        <select class="form-control form-control-lg custom-select" required name="investor_id[]">
+                                        <select class="form-control form-control-lg custom-select" required
+                                            name="investor_id[]">
                                             <option value="">Choose Investor</option>
                                             @foreach ($site_heads as $head)
                                                 @if ($head->type->name == INVESTOR)

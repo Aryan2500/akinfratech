@@ -2,30 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\SiteHelper;
 use App\Models\Plot;
 use App\Models\Plottype;
 use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PlotController extends Controller
+class PlotController extends BaseController
 {
     //
 
     public function index()
     {
         $page_heading = 'Plots';
-        $plots  = Plot::all();
-        return view('pages.admin.plot.list', compact('page_heading', 'plots'));
+
+        if ($this->isSiteHead) {
+            $plots  = Plot::where('user_id', Auth::user()->id)->get();
+        } else {
+            $plots  = Plot::all();
+        }
+        $layoutfor = $this->layoutfor;
+
+        return view('pages.admin.plot.list', compact('page_heading', 'plots', 'layoutfor'));
     }
     public function create()
     {
         $page_heading = 'Create plot';
-        $sites = Site::all();
-        $plottypes = Plottype::all();
+        $sites = SiteHelper::getAllSites();
+        $plottypes = $this->isSiteHead ?  Plottype::where('user_id', Auth::user()->id) : Plottype::all();
         // dd($site_heads[0]->type);
         $plot = null;
-        return view('pages.admin.plot.create', compact('page_heading', 'sites', 'plottypes', 'plot'));
+
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.plot.create', compact('page_heading', 'sites', 'plottypes', 'plot', 'layoutfor'));
     }
     public function store(Request $req)
     {
@@ -50,7 +60,9 @@ class PlotController extends Controller
     {
         $plot = Plot::find($id);
         $page_heading = "Update Plot";
-        return view('pages.admin.plot.edit', compact('plot', 'page_heading'));
+
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.plot.edit', compact('plot', 'page_heading', 'layoutfor'));
     }
     public function update(Request $req)
     {

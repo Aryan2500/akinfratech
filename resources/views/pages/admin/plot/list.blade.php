@@ -1,4 +1,5 @@
-@extends('layout.base')
+@extends('layout.' . $layoutfor)
+
 
 @section('page_css')
     <link rel="stylesheet" href="{{ asset('assets/bundles/dataTables.min.css') }}">

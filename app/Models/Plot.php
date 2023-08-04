@@ -18,6 +18,6 @@ class Plot extends Model
 
     public function plotType()
     {
-        return $this->belongsTo(Plottype::class ,'plottype_id');
+        return $this->belongsTo(Plottype::class, 'plottype_id');
     }
 }

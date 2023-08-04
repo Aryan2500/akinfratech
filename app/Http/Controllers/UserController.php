@@ -9,20 +9,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class UserController extends BaseController
 {
+
     //
     public function  index()
     {
         $page_heading  = 'Users';
-        $users = User::orderBy('created_at', 'ASC')->get();
-        return view('pages.admin.user.list', compact('page_heading', 'users'));
+        if (UserHelper::checkIfSiteHead()) {
+            $users = User::orderBy('created_at', 'ASC')->where('parent_id', Auth::user()->id)->get();
+        } else {
+            $users = User::orderBy('created_at', 'ASC')->get();
+        }
+
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.user.list', compact('page_heading', 'users', 'layoutfor'));
     }
     public function  create()
     {
         $page_heading = 'Create a new user';
         $user = null;
-        return view('pages.admin.user.create', compact('page_heading', 'user'));
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.user.create', compact('page_heading', 'user', 'layoutfor'));
     }
     public function store(Request $req)
     {
@@ -52,7 +60,8 @@ class UserController extends Controller
         $page_heading = 'Edit user';
 
         $user = User::find($id);
-        return view('pages.admin.user.edit', compact('user', 'page_heading'));
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.user.edit', compact('user', 'page_heading', 'layoutfor'));
     }
     public function update(Request $req)
     {

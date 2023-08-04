@@ -30,5 +30,11 @@ class Site extends Model
     public function farmers()
     {
         return $this->belongsToMany(Farmer::class);
+        // return $this->hasMany(Farmer::class);
+    }
+
+    public function plots()
+    {
+        return $this->hasMany(Plot::class);
     }
 }

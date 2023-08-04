@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 use App\Models\User;
 use App\Models\Usertype;
+use Illuminate\Support\Facades\Auth;
 
 class UserHelper
 {
@@ -25,5 +26,10 @@ class UserHelper
         } else {
             return false;
         }
+    }
+
+    public static function checkIfSiteHead()
+    {
+        return Auth::user()->type->name == SITE_HEAD;
     }
 }

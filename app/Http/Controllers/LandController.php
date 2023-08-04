@@ -8,22 +8,29 @@ use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LandController extends Controller
+class LandController extends BaseController
 {
     //
 
     public function index()
     {
         $page_heading = 'Lands';
-        $lands  = Land::all();
-        return view('pages.admin.land.list', compact('page_heading', 'lands'));
+        if ($this->isSiteHead) {
+            $lands = Land::where('user_id', Auth::user()->id)->get();
+        } else {
+            $lands  = Land::all();
+        }
+
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.land.list', compact('page_heading', 'lands', 'layoutfor'));
     }
     public function create()
     {
         $page_heading = 'Create land';
         // dd($site_heads[0]->type);
         $land = null;
-        return view('pages.admin.land.create', compact('page_heading', 'land'));
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.land.create', compact('page_heading', 'land', 'layoutfor'));
     }
     public function store(Request $req)
     {
@@ -57,8 +64,8 @@ class LandController extends Controller
         $page_heading = 'Update land';
 
         $land = Land::find($id);
-
-        return view('pages.admin.land.edit', compact('land', 'page_heading'));
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.land.edit', compact('land', 'page_heading', 'layoutfor'));
     }
 
     public function update(Request $req)

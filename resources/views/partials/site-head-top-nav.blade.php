@@ -21,23 +21,21 @@
              </a>
 
              <ul class="header-menu flex-grow-1">
-                 @if (!UserHelper::checkIfSiteHead())
-                     <li class="w-100 d-none d-md-inline-flex">
+                 <li class="w-100 d-none d-md-inline-flex">
 
-                         <div class="row" style="width: 100%">
+                     {{-- <div class="row" style="width: 100%">
 
-                             <select class="form-control form-control-md custom-select" id="top_select_site">
-                                 <option value=""> Select Site </option>
-                                 @foreach (SiteHelper::getAllSites() as $site)
-                                     <option value="{{ $site->id }}">{{ $site->name }}</option>
-                                 @endforeach
+                         <select class="form-control form-control-md custom-select" id="top_select_site">
+                             <option value=""> Select Site </option>
+                             @foreach (SiteHelper::getAllSites() as $site)
+                                 <option value="{{ $site->id }}">{{ $site->name }}</option>
+                             @endforeach
 
-                             </select>
+                         </select>
 
-                         </div>
+                     </div> --}}
 
-                     </li>
-                 @endif
+                 </li>
 
 
                  <li class="dropdown user">

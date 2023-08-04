@@ -8,6 +8,7 @@
         <select class="form-control show-tick   select2" multiple data-placeholder="Select" required name="site_id[]">
             <option id="" value="">--Select--</option>
 
+
             @foreach (SiteHelper::getAllSites() as $s)
                 <option value="{{ $s->id }}"
                     @if ($farmer) @foreach ($farmer->sites as $site)

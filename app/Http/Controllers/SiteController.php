@@ -2,27 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\UserHelper;
 use App\Models\Investment;
 use App\Models\Site;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     //
     public function index()
     {
         $page_heading = 'Sites';
-        $sites  = Site::all();
-        return view('pages.admin.site.list', compact('page_heading', 'sites'));
+        if ($this->isSiteHead) {
+            $sites  = Site::where('user_id', Auth::user()->id)->orWhere('sitehead_id', Auth::user()->id)->get();
+        } else {
+            $sites  = Site::all();
+        }
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.site.list', compact('page_heading', 'sites', 'layoutfor'));
     }
     public function create()
     {
         $page_heading = 'Create site';
         $site_heads = User::all();
         // dd($site_heads[0]->type);
-        return view('pages.admin.site.create', compact('page_heading', 'site_heads'));
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.site.create', compact('page_heading', 'site_heads',  'layoutfor'));
     }
     public function store(Request $req)
     {

@@ -73,4 +73,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Investment::class);
     }
+
+    public function farmers()
+    {
+        return $this->hasManyThrough(Site::class, Farmer::class);
+    }
 }

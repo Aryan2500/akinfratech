@@ -1,4 +1,5 @@
-@extends('layout.base')
+@extends('layout.' . $layoutfor)
+
 
 @section('page_css')
     <link rel="stylesheet" href="{{ asset('assets/bundles/dataTables.min.css') }}">
@@ -54,7 +55,7 @@
                                 <td>{{ $site->total_size }}</td>
                                 <td>
                                     <button class="btn btn-primary">Edit</button>
-                                    <button class="btn btn-danger">Lock</button>
+
                                 </td>
                             </tr>
                         @endforeach

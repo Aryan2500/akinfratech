@@ -4,23 +4,43 @@ namespace App\Http\Controllers;
 
 use App\Models\Farmer;
 use App\Models\Site;
+
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 
-class FarmerController extends Controller
+class FarmerController extends BaseController
 {
     //
     public function  index()
     {
         $page_heading  = 'Farmers';
-        $farmers = Farmer::all();
-        return view('pages.admin.farmer.list', compact('page_heading', 'farmers'));
+
+        if ($this->isSiteHead) {
+            $farmers = new Collection();
+            foreach (Site::where('user_id', Auth::user()->id)->orWhere('sitehead_id', Auth::user()->id)->get() as $key => $site) {
+                if (count($site->farmers) > 0) {
+                    foreach ($site->farmers as $key => $farmer) {
+                        $farmers->push($farmer);
+                    }
+                }
+            }
+            // dd($farmers);
+        } else {
+            $farmers = Farmer::all();
+        }
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.farmer.list', compact('page_heading', 'farmers', 'layoutfor'));
     }
+
     public function  create()
     {
         $page_heading = 'Create a new Farmer';
         $farmer = null;
-        return view('pages.admin.farmer.create', compact('page_heading', 'farmer'));
+
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.farmer.create', compact('page_heading', 'farmer', 'layoutfor'));
     }
     public function store(Request $req)
     {
@@ -45,7 +65,9 @@ class FarmerController extends Controller
         $page_heading = 'Update Farmer';
 
         $farmer = Farmer::find($id);
-        return view('pages.admin.farmer.edit', compact('farmer', 'page_heading'));
+
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.farmer.edit', compact('farmer', 'page_heading', 'layoutfor'));
     }
     public function update(Request $req)
     {
