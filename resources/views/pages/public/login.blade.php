@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/mycss.css">
     <!--[ Jquery Core Js ]-->
     <script src="assets/js/plugins.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
@@ -83,7 +84,7 @@
                                     <div class="mb-2">
                                         <label class="form-label">Email address</label>
                                         <input type="email" name="email" class="form-control form-control-lg"
-                                            placeholder="name@example.com" value="{{ old('email') }}">
+                                            id="email" placeholder="name@example.com" value="{{ old('email') }}">
                                     </div>
                                 </li>
                                 <li class="col-12">
@@ -98,12 +99,35 @@
                                             placeholder="***************">
                                     </div>
                                 </li>
-
                                 <li class="col-12 mt-4">
                                     <button class="btn btn-lg btn-block btn-dark lift text-uppercase px-5"
-                                        title="">SIGN IN</button>
+                                        id="sendOTp" type="button" title="">SIGN IN</button>
                                 </li>
+                                <div class="modal fade" id="otpModal" tabindex="-1"
+                                    aria-labelledby="exampleModalSmLabel" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title h4" id="exampleModalSmLabel">OTP</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-2">
+                                                    <input type="text" name="otp"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="Enter your OTP">
 
+                                                </div>
+                                                <li class="col-12 mt-4">
+                                                    <button
+                                                        class="btn btn-lg btn-block btn-dark lift text-uppercase px-5"
+                                                        id="sendOTp" type="submit" title="">Submit</button>
+                                                </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </ul>
                             <!--[ ul.row end ]-->
                         </form>
@@ -180,10 +204,69 @@
     </div>
     <!--[ Jquery Page Js ]-->
     <script src="assets/js/theme.js"></script>
+    <script src="assets/bundles/sweetalert2.bundle.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
     <script src="{{ asset('assets/js/login-form-validator.js') }}"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        function showToast(msg, color) {
+            Toastify({
+                text: msg,
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: color,
+                },
+                onClick: function() {} // Callback after click
+            }).showToast();
+        }
+
+        $(document).ready(function() {
+            $('#sendOTp').on('click', function() {
+                $.ajax({
+                    type: "get",
+                    url: "{{ route('getOtp') }}",
+                    data: {
+                        'email': $('#email').val(),
+                    },
+                    success: function(res) {
+                        showToast(res.message, 'green')
+                        // Swal.fire("Our First Alert");
+                        $('#otpModal').modal('show');
+
+                    },
+                    error: function(err) {
+                        // showToast(err.message, 'red')
+                    }
+                });
+            });
+
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
