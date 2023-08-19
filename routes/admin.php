@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', AdminMiddleware::class]], function () {
     Route::get('dashboard',  [DashboardController::class, 'index'])->name('dashboard');
-    
+
     include __DIR__ . '/user.php';
     include __DIR__ . '/property.php';
     include __DIR__ . '/booking.php';

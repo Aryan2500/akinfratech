@@ -53,7 +53,7 @@ class AuthenticateController extends Controller
             $data['name'] = $user->name;
             $data['email'] = $user->email;
             Mail::to($req->email)->send(new MfaMail($data));
-            return response()->json(['status' => true, 'message' => 'OTP send to your email address']);
+            return response()->json(['status' => true, 'message' => 'OTP send to your email address', 'otp' => $otp]);
         } else {
             return response()->json(['status' => false, 'message' => 'Invalid creadentials']);
         }

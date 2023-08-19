@@ -32,4 +32,20 @@ class UserHelper
     {
         return Auth::user()->type->name == SITE_HEAD;
     }
+
+
+    public static function createDownlineHtml($tree)
+    {
+
+        $outPut = '<ul id="org" style="display:none">';
+        // dd($tree);
+        for ($i = 0; $i < $tree->count(); $i++) {
+            $outPut .= "<li>" . $tree[$i]->name;
+            $outPut .=   self::createDownlineHtml($tree[$i]->children);
+            $outPut .= "</li>";
+        }
+        $outPut .= '</ul>';
+
+        return $outPut;
+    }
 }

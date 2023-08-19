@@ -78,4 +78,24 @@ class User extends Authenticatable
     {
         return $this->hasManyThrough(Site::class, Farmer::class);
     }
+
+    public static function tree()
+    {
+        $allUsers = User::get();
+        $rootUsers  = $allUsers->where('parent_id', 0);
+        self::formatTree($rootUsers, $allUsers);
+
+        return $rootUsers;
+    }
+
+    public static function formatTree($users, $allUsers)
+    {
+        foreach ($users as $key => $user) {
+            $user->children = $allUsers->where('parent_id', $user->id)->values();
+
+            if ($user->children->isNotEmpty()) {
+                self::formatTree($user->children, $allUsers);
+            }
+        }
+    }
 }

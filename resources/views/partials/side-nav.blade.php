@@ -72,6 +72,8 @@
                                  href="{{ route('user.list') }}">Users</a></li>
                          <li><a class="ms-link {{ request()->is('admin/user-management/role*') ? 'active' : '' }}"
                                  href="{{ route('role.list') }}">Roles</a></li>
+                         <li><a class="ms-link {{ request()->is('admin/user-management/role*') ? 'active' : '' }}"
+                                 href="{{ route('downline.list') }}">Downline</a></li>
                      </ul>
                  </li>
                  <li class="collapsed">

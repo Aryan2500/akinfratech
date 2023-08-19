@@ -22,6 +22,8 @@ Route::group(['prefix' => 'user-management'], function () {
         Route::post('/update', [RoleController::class, 'update'])->name('role.update');
         Route::post('/lock', [RoleController::class, 'lock'])->name('role.lock');
     });
-});
 
- 
+    Route::group(['prefix' => 'associate'], function () {
+        Route::get('/downline', [UserController::class, 'getDownline'])->name('downline.list');
+    });
+});

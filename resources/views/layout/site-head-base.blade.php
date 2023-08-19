@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <!--[ Jquery Core Js ]-->
     <link rel="stylesheet" href="{{ asset('assets/css/mycss.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.jOrgChart.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/prettify.css') }}">
+
     <link rel="stylesheet" href="{{ asset('assets/bundles/select2.min.css') }}">
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
 

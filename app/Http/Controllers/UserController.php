@@ -13,6 +13,9 @@ class UserController extends BaseController
 {
 
     //
+
+    public $tree = null;
+
     public function  index()
     {
         $page_heading  = 'Users';
@@ -89,5 +92,14 @@ class UserController extends BaseController
     }
     public function lock()
     {
+    }
+
+    public function getDownline()
+    {
+        $downline = User::tree();
+        // echo "<pre>" . $downline . "</pre>";
+        $page_heading = 'Users Downline';
+        $layoutfor = $this->layoutfor;
+        return view('pages.admin.downline.list', compact('downline', 'page_heading', 'layoutfor'));
     }
 }
