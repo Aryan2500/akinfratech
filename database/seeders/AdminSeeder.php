@@ -21,6 +21,7 @@ class AdminSeeder extends Seeder
             'email' => 'admin@akinfratech.com',
             'password' => Hash::make('admin@akinfratech.com'),
             'usertype_id' => 1,
+            'parent_id'=>0
         ]);
 
         UserRole::create([
