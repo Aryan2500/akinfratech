@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\BlockHelper;
+use App\Helpers\PlotHelper;
 use App\Helpers\SiteHelper;
 use App\Models\Plot;
 use App\Models\Plottype;
@@ -30,12 +32,13 @@ class PlotController extends BaseController
     {
         $page_heading = 'Create plot';
         $sites = SiteHelper::getAllSites();
+        $blocks = BlockHelper::getAllBlocks();
         $plottypes = $this->isSiteHead ?  Plottype::where('user_id', Auth::user()->id) : Plottype::all();
         // dd($site_heads[0]->type);
         $plot = null;
 
         $layoutfor = $this->layoutfor;
-        return view('pages.admin.plot.create', compact('page_heading', 'sites', 'plottypes', 'plot', 'layoutfor'));
+        return view('pages.admin.plot.create', compact('page_heading', 'sites', 'blocks', 'plottypes', 'plot', 'layoutfor'));
     }
     public function store(Request $req)
     {
@@ -47,7 +50,8 @@ class PlotController extends BaseController
             'size' => $req->size,
             'plottype_id' => $req->plottype_id,
             'user_id' => Auth::user()->id,
-            'site_id' => $req->site_id
+            'site_id' => $req->site_id,
+            'block_id' => $req->block_id,
         ]);
         if ($plot instanceof Plot) {
             return redirect()->route('plot.list')->with('success', 'plot created successfully');
@@ -59,10 +63,12 @@ class PlotController extends BaseController
     public function edit($id)
     {
         $plot = Plot::find($id);
+        $blocks = BlockHelper::getAllBlocks();
+
         $page_heading = "Update Plot";
 
         $layoutfor = $this->layoutfor;
-        return view('pages.admin.plot.edit', compact('plot', 'page_heading', 'layoutfor'));
+        return view('pages.admin.plot.edit', compact('plot', 'page_heading', 'blocks' ,'layoutfor'));
     }
     public function update(Request $req)
     {
@@ -74,7 +80,8 @@ class PlotController extends BaseController
             'size' => $req->size,
             'plottype_id' => $req->plottype_id,
             'user_id' => Auth::user()->id,
-            'site_id' => $req->site_id
+            'site_id' => $req->site_id,
+            'block_id' => $req->block_id
         ]);
         if ($plot) {
             return redirect()->route('plot.list')->with('success', 'plot updated successfully');

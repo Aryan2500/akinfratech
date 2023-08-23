@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Block;
 use App\Models\Farmer;
 use App\Models\Site;
 use App\Models\User;

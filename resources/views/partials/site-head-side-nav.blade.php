@@ -70,6 +70,8 @@
                          id="menu_apps">
                          <li><a class="ms-link {{ request()->is('site-head/user-management/user*') ? 'active' : '' }}"
                                  href="{{ route('user.list') }}">Users</a></li>
+                         <li><a class="ms-link {{ request()->is('site-head/user-management/role*') ? 'active' : '' }}"
+                                 href="{{ route('downline.list') }}">Downline</a></li>
                          {{-- <li><a class="ms-link {{ request()->is('site-head/user-management/role*') ? 'active' : '' }}"
                                  href="{{ route('role.list') }}">Roles</a></li> --}}
 
@@ -91,6 +93,8 @@
                          id="properyMenu">
                          <li><a class="ms-link {{ request()->is('site-head/property-management/site*') ? 'active' : '' }}"
                                  href="{{ route('site.list') }}">Sites</a></li>
+                         <li><a class="ms-link {{ request()->is('site-head/property-management/block*') ? 'active' : '' }}"
+                                 href="{{ route('block.list') }}">Block</a></li>
                          <li><a class="ms-link {{ request()->is('site-head/property-management/farmer*') ? 'active' : '' }}"
                                  href="{{ route('farmer.list') }}">Farmers</a></li>
                          <li><a class="ms-link {{ request()->is('site-head/property-management/land*') ? 'active' : '' }}"

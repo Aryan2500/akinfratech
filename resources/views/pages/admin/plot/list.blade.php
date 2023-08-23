@@ -21,6 +21,7 @@
                             <th>Address</th>
                             <th>Size</th>
                             <th>Site</th>
+                            <th>Block</th>
                             <th>Status</th>
                             <th>Plot Type</th>
                             <th>Price</th>
@@ -34,6 +35,7 @@
                                 <td>{{ $plot->address }}</td>
                                 <td>{{ $plot->size }} </td>
                                 <td>{{ $plot->site->name }} </td>
+                                <td>{{ $plot->block->name }} </td>
 
                                 <td>
                                     @if ($plot->isBooked)
@@ -49,7 +51,7 @@
 
                                 <td>
                                     <a class="btn btn-primary" href="{{ route('plot.edit', $plot->id) }}">Edit</a>
-                                    <button class="btn btn-danger">Lock</button>
+
                                 </td>
                             </tr>
                         @endforeach

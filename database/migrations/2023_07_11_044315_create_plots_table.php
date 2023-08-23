@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Block;
 use App\Models\Plottype;
 use App\Models\Site;
 use App\Models\User;
@@ -23,6 +24,7 @@ return new class extends Migration
             $t->boolean('isBooked')->default(false);
             $t->foreignIdFor(Plottype::class)->comment('type of plot');
             $t->foreignIdFor(Site::class)->comment('this plot situated on this site');
+            $t->foreignIdFor(Block::class)->comment('the block in which the plot is located');
             $t->foreignIdFor(User::class)->comment('creator id');
             $t->timestamps();
         });

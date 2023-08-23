@@ -36,7 +36,6 @@ class UserHelper
 
     public static function createDownlineHtml($tree)
     {
-
         $outPut = '<ul id="org" style="display:none">';
         // dd($tree);
         for ($i = 0; $i < $tree->count(); $i++) {

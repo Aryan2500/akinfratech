@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlockController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FarmerController;
@@ -22,6 +23,15 @@ Route::group(['prefix' => 'property-management'], function () {
         Route::post('/save', [SiteController::class, 'store'])->name('site.store');
         Route::get('/edit', [SiteController::class, 'edit'])->name('site.edit');
         Route::post('/update', [SiteController::class, 'update'])->name('site.update');
+        // Route::get('/lock', [SiteController::class, 'lock'])->name('site.lock');
+    });
+
+    Route::group(['prefix' => 'block'], function () {
+        Route::get('/', [BlockController::class, 'index'])->name('block.list');
+        Route::get('/create', [BlockController::class, 'create'])->name('block.create');
+        Route::post('/save', [BlockController::class, 'store'])->name('block.store');
+        Route::get('/edit/{id}', [BlockController::class, 'edit'])->name('block.edit');
+        Route::post('/update', [BlockController::class, 'update'])->name('block.update');
         // Route::get('/lock', [SiteController::class, 'lock'])->name('site.lock');
     });
 

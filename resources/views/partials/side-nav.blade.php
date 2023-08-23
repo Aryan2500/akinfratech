@@ -92,6 +92,8 @@
                          id="properyMenu">
                          <li><a class="ms-link {{ request()->is('admin/property-management/site*') ? 'active' : '' }}"
                                  href="{{ route('site.list') }}">Sites</a></li>
+                         <li><a class="ms-link {{ request()->is('admin/property-management/block*') ? 'active' : '' }}"
+                                 href="{{ route('block.list') }}">Block</a></li>
                          <li><a class="ms-link {{ request()->is('admin/property-management/farmer*') ? 'active' : '' }}"
                                  href="{{ route('farmer.list') }}">Farmers</a></li>
                          <li><a class="ms-link {{ request()->is('admin/property-management/land*') ? 'active' : '' }}"

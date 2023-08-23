@@ -45,6 +45,19 @@
         </div>
         <div class="col-6 mt-2">
             <label class="form-group float-label">
+                <select class="form-control form-control-lg custom-select" name="block_id" required>
+                    <option value="">Choose Block </option>
+                    @foreach ($blocks as $b)
+                        <option value="{{ $b->id }}"
+                            {{ $plot ? ($plot->block_id == $b->id ? 'selected' : '') : '' }}>
+                            {{ $b->name }}</option>
+                    @endforeach
+                </select>
+                <span>Block</span>
+            </label>
+        </div>
+        <div class="col-6 mt-2">
+            <label class="form-group float-label">
                 <select class="form-control form-control-lg custom-select" name="plottype_id" required>
                     <option value="">Choose Plot type </option>
                     @foreach (PlotHelper::getAllPlotTypes() as $ptype)

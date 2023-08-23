@@ -87,7 +87,7 @@
             <span class="float-label mt-3">
                 <input type="text" class="form-control form-control-lg" name="balance_amount"
                     placeholder="Balance Amount" value="{{ $registry ? $registry->balance_amount : '' }}" required>
-                <label class="form-label" for="TextInput">Discount Amount</label>
+                <label class="form-label" for="TextInput">Balance Amount</label>
             </span>
         </div>
         <div class="col-6">

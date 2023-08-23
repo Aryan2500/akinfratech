@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             PermisssionSeeder::class,
             SiteSeeder::class,
             PlotSeeder::class,
+            BlockSeeder::class
 
         ]);
     }

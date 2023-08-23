@@ -96,7 +96,13 @@ class UserController extends BaseController
 
     public function getDownline()
     {
-        $downline = User::tree();
+        if (Auth::user()->type->name == SITE_HEAD) {
+            $downline = User::tree(Auth::user()->parent->id);
+            // dd(Auth::user()->parent->id);
+        } else {
+            $downline = User::tree();
+        }
+       
         // echo "<pre>" . $downline . "</pre>";
         $page_heading = 'Users Downline';
         $layoutfor = $this->layoutfor;

@@ -79,10 +79,11 @@ class User extends Authenticatable
         return $this->hasManyThrough(Site::class, Farmer::class);
     }
 
-    public static function tree()
+    public static function tree($rootId = null)
     {
+
         $allUsers = User::get();
-        $rootUsers  = $allUsers->where('parent_id', 0);
+        $rootUsers  = $allUsers->where('parent_id', $rootId ? $rootId : 0)->values();
         self::formatTree($rootUsers, $allUsers);
 
         return $rootUsers;
@@ -97,5 +98,10 @@ class User extends Authenticatable
                 self::formatTree($user->children, $allUsers);
             }
         }
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(User::class, 'parent_id');
     }
 }

@@ -5,23 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Plot extends Model
+class Block extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
+
     public function site()
     {
         return $this->belongsTo(Site::class);
-    }
-
-    public function block()
-    {
-        return $this->belongsTo(Block::class);
-    }
-    public function plotType()
-    {
-        return $this->belongsTo(Plottype::class, 'plottype_id');
     }
 }

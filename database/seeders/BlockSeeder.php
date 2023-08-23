@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Block;
 use App\Models\Plot;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PlotSeeder extends Seeder
+class BlockSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,15 +17,13 @@ class PlotSeeder extends Seeder
         //
         for ($i = 1; $i < 10; $i++) {
             # code...
-            Plot::create([
-                'name' => 'PLOT' . $i,
-                'address' => 'Address' . $i,
-                'size' => '200sq feet',
-                'price' => '20000',
-                'plottype_id' => random_int(1, 3),
-                'site_id' => random_int(1, 5),
+            Block::create([
+                'name' => 'BLOCK' . $i,
+                'area' => 40000 + $i,
+                'booked_area' => '20000',
+                'remaining_area' => '1000',
                 'user_id' => 1,
-                'block_id' => 1,
+                'site_id' => 1,
             ]);
         }
     }
