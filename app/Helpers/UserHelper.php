@@ -33,7 +33,6 @@ class UserHelper
         return Auth::user()->type->name == SITE_HEAD;
     }
 
-
     public static function createDownlineHtml($tree)
     {
         $outPut = '<ul id="org" style="display:none">';
@@ -46,5 +45,11 @@ class UserHelper
         $outPut .= '</ul>';
 
         return $outPut;
+    }
+
+    public static function getAssociates()
+    {
+        $assocs = User::where('usertype_id', '!=', 5)->get();
+        return $assocs;
     }
 }

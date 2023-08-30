@@ -120,6 +120,8 @@
                      <!-- Menu: Sub menu ul -->
                      <ul class="sub-menu collapse {{ request()->is('admin/booking-management*') ? 'show' : '' }}"
                          id="bookingMenu">
+                         <li><a class="ms-link {{ request()->is('admin/user-management/customer*') ? 'active' : '' }}"
+                                 href="{{ route('customer.list') }}">Customer</a></li>
                          <li><a class="ms-link {{ request()->is('admin/booking-management/plot-registry*') ? 'active' : '' }}"
                                  href="{{ route('plot-registry.create') }}">New Plot Registry</a></li>
 

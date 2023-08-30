@@ -4,6 +4,7 @@ define('ADMIN', 'Admin');
 define('AGENT', 'Agent');
 define('INVESTOR', 'Investor');
 define('SITE_HEAD', 'Site_Head');
+define('CUSTOMER', 'Customer');
 
 define('REFER_CODE_PREFIX', 'AKINFRATECH');
 
@@ -19,8 +20,7 @@ define('CARD', 'Card');
 
 define('PAYMENT_MODE', [CASH, CHEQUE, DD, NEFT, CARD]);
 
-
-define('USER_TYPES', [ADMIN, AGENT, SITE_HEAD, INVESTOR]);
+define('USER_TYPES', [ADMIN, AGENT, SITE_HEAD, INVESTOR, CUSTOMER]);
 
 define('PERMISSIONS_CATEGORY', ['User management', 'Property Management', 'Investors management']);
 
