@@ -11,7 +11,8 @@
         <div class="card mb-4">
             <div class="card-header">
                 <h6 class="card-title mb-0">Customer list</h6>
-                <a type="button" href="{{ route('customer.create') }}" class="btn btn-outline-primary float-end ">Create new</a>
+                <a type="button" href="{{ route('customer.create') }}" class="btn btn-outline-primary float-end ">Create
+                    new</a>
             </div>
             <div class="card-body">
                 <table class="my_data_table table display dataTable table-hover">
@@ -30,10 +31,9 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->type->name }}</td>
                                 <td>
-                                    <a class="btn btn-primary" href="{{ route('user.edit', $user->id) }}"
+                                    <a class="btn btn-primary" href="{{ route('customer.edit', $user->id) }}"
                                         {{ Auth::user()->id == $user->id ? 'disabled' : '' }}>Edit</a>
-                                    <button class="btn btn-danger"
-                                        {{ Auth::user()->id == $user->id ? 'disabled' : '' }}>Lock</button>
+
                                 </td>
                             </tr>
                         @endforeach

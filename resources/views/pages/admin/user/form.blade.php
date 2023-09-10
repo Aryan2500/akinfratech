@@ -60,6 +60,19 @@
             <span>User Type</span>
         </label>
     </div>
+    <div class="col-6 mt-3">
+        <label class="form-group float-label">
+            <select class="form-control form-control-lg custom-select" id="user_type_select" name="role_id">
+                <option value="">Choose Role</option>
+                @foreach (UserHelper::getRoles() as $role)
+                    <option value="{{ $role->id }}"
+                        {{ $user ? ($user->role_id == $role->id ? 'selected' : '') : '' }}>{{ $role->name }}
+                    </option>
+                @endforeach
+            </select>
+            <span>Role</span>
+        </label>
+    </div>
 
     <div class="col-6 mt-3" id="password_section">
         <span class="float-label">

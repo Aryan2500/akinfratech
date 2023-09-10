@@ -9,40 +9,31 @@
          <div class="card-body">
              <form class="row g-3 maskking-form" id="userForm" method="post" action="{{ route('customer.store') }}">
                  @csrf
-
+                 <input type="hidden" name="usertype_id" value=5>
                  @include('pages.admin.customer.form')
-
                  <button type="submit" style="width: 100px" class="btn btn-primary">Submit</button>
-
              </form>
          </div>
      </div>
  @endsection
 
-
  @push('scripts')
      <script src="{{ asset('assets/js/user-create-form-validator.js') }}"></script>
      <script>
          $(document).ready(function() {
-             $("#user_type_select").on('change', function(e) {
-                 if (e.target.value == 4) {
-                     $("#password_section").remove();
-                 } else {
-                     let passwordSection = `<div class="col-6 mt-3" id="password_section">
-                                                <span class="float-label">
-                                                    <input type="text" class="form-control form-control-lg" id="emailInput" name="password"
-                                                        placeholder="password">
-                                                    <label class="form-label" for="emailInput">Password</label>
-                                                </span>
-                                            </div>`;
-                     $("#password_section").remove();
-                     $("#inputParent").append(passwordSection);
+             $("#sameAsPermanentAddress").change(function() {
+                 if (this.checked) {
+                     $address = $('#paddress').val();
+                     $pin_code = $('#pin_code').val();
+                     $city = $('#city').val();
+                     $state = $('#state').val();
 
+                     $('#corresAddress').val($address);
+                     $('#corres_pin').val($pin_code);
+                     $('#corres_city').val($city);
+                     $('#corres_state').val($state);
                  }
-
              });
-
-
          });
      </script>
  @endpush

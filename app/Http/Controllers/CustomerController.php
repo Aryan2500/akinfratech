@@ -25,12 +25,12 @@ class CustomerController extends BaseController
         $page_heading = 'Plot Registry';
         $customer = null;
         $layoutfor = $this->layoutfor;
-
         return view('pages.admin.customer.create', compact('customer', 'page_heading', 'layoutfor'));
     }
     function store(Request $req)
     {
-        $customer = User::create(array_merge($req->all(), ['user_id' => Auth::user()->id]));
+        // dd($req->all());
+        $customer = User::create($req->all());
         if ($customer instanceof User) {
             return redirect()->route('customer.list')->with('success', 'Customer created successfully');
         } else {
@@ -47,7 +47,10 @@ class CustomerController extends BaseController
 
     function update(Request $req)
     {
-        $customer = User::find($req->id)->update($req->all());
+        $req->request->remove('_token');
+        $customer = User::find($req->id);
+       
+        $customer->update($req->all());
         if ($customer) {
             return redirect()->route('customer.list')->with('success', 'Customer updated successfully');
         } else {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\PermissionHelper;
 use App\Models\Permission;
 use App\Models\Permissioncategory;
 use App\Models\Role;
@@ -17,14 +18,13 @@ class RoleController extends Controller
     {
         $page_heading = "Roles";
         $roles = Role::all();
-    return view('pages.admin.role.list', compact('page_heading', 'roles'));
+        return view('pages.admin.role.list', compact('page_heading', 'roles'));
     }
 
     public function create()
     {
         $page_heading = "Create Roles";
         $permission_categories = Permissioncategory::all();
-
         return view('pages.admin.role.create', compact('page_heading', 'permission_categories'));
     }
     public function store(Request $req)
@@ -43,14 +43,32 @@ class RoleController extends Controller
         }
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('pages.role.edit');
+        
+        try {
+            $role = Role::findOrFail($id);
+        } catch (QueryException $e) {
+            return redirect()->back()->with('error', ' Something went wrong');
+        }
+        // dd($role->permissions);
+        $permission_categories = Permissioncategory::all();
+
+        $page_heading = "Edit Roles";
+        return view('pages.admin.role.edit', compact('role', 'permission_categories', 'page_heading'));
     }
 
     public function update(Request $req)
     {
-        dd($req->all());
+        try {
+            $role = Role::findOrFail($req->id);
+            $role->update(['name' => $req->name]);
+            $role->permissions()->detach();
+            $role->permissions()->attach($req->permission_ids);
+            return redirect()->route('role.list')->with('success', 'Role Updated successfully');
+        } catch (QueryException $e) {
+            return redirect()->back()->with('error', ' Something went wrong');
+        }
     }
 
     public function lock(Request $req)

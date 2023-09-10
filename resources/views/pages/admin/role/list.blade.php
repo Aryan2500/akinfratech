@@ -32,8 +32,8 @@
                                         @endforeach
                                     </div>
                                 </td>
-                                <td><button class="btn btn-danger">Lock</button></td>
-                                <td><button class="btn btn-primary">Edit</button></td>
+
+                                <td><a class="btn btn-primary" href="{{ route('role.edit', $role->id) }}">Edit</a></td>
                             </tr>
                         @endforeach
 

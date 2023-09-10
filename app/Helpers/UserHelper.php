@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\Models\Role;
 use App\Models\User;
 use App\Models\Usertype;
 use Illuminate\Support\Facades\Auth;
@@ -51,5 +52,11 @@ class UserHelper
     {
         $assocs = User::where('usertype_id', '!=', 5)->get();
         return $assocs;
+    }
+
+    public static function getRoles()
+    {
+        $roles = Role::all();
+        return $roles;
     }
 }

@@ -52,6 +52,7 @@ class UserController extends BaseController
                 'parent_refer_code' => $req->parent_refer_code,
                 'address' => $req->address,
                 'phone' => $req->phone,
+                'role_id' => $req->role_id
             ]);
             return redirect()->route('user.list')->with('success', 'User created successfully');
         } catch (QueryException $th) {
@@ -84,6 +85,8 @@ class UserController extends BaseController
                 'parent_refer_code' => $req->parent_refer_code,
                 'address' => $req->address,
                 'phone' => $req->phone,
+                'role_id' => $req->role_id
+
             ]);
             return redirect()->route('user.list')->with('success', 'User updated successfully');
         } catch (QueryException $th) {
@@ -102,7 +105,7 @@ class UserController extends BaseController
         } else {
             $downline = User::tree();
         }
-       
+
         // echo "<pre>" . $downline . "</pre>";
         $page_heading = 'Users Downline';
         $layoutfor = $this->layoutfor;

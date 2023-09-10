@@ -26,6 +26,7 @@ return new class extends Migration
             $t->string('refer_code')->nullable()->unique();
             $t->string('parent_refer_code')->nullable();
             $t->foreignId('parent_id')->default(1);
+            $t->string('swd')->nullable()->comment('son , wife , daughter');
             $t->string('swdOf')->nullable();
             $t->string('dob')->nullable();
             $t->string('gender')->nullable();
@@ -48,6 +49,7 @@ return new class extends Migration
             $t->string('profile_img')->nullable();
             $t->string('nominee_name')->nullable();
             $t->string('relation')->nullable();
+            $t->foreignIdFor(Role::class)->nullable();
             $t->rememberToken();
             $t->timestamps();
         });

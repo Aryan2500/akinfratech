@@ -9,9 +9,7 @@
         <div class="card-body">
             <form class="row g-3 maskking-form" id="userForm" method="post" action="{{ route('customer.update') }}">
                 @csrf
-
-                @include('pages.admin.user.form')
-
+                @include('pages.admin.customer.form')
                 <button type="submit" style="width: 100px" class="btn btn-primary">Submit</button>
 
             </form>
