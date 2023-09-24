@@ -5,7 +5,7 @@
         <div class="col-6 ">
             <label class="form-group float-label">
                 <select class="form-control form-control-lg custom-select" name="site_id" required>
-                    <option value="">Choose Site Head</option>
+                    <option value="">Choose Site</option>
                     @foreach (SiteHelper::getAllSites() as $site)
                         <option value="{{ $site->id }}"
                             {{ $land ? ($land->site_id == $site->id ? 'selected' : '') : '' }}>{{ $site->name }}

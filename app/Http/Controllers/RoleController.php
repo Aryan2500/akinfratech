@@ -45,7 +45,7 @@ class RoleController extends Controller
 
     public function edit($id)
     {
-        
+
         try {
             $role = Role::findOrFail($id);
         } catch (QueryException $e) {

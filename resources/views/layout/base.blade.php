@@ -42,7 +42,6 @@
             </div>
         </main>
 
-
         @include('partials.footer')
     </div>
 
@@ -62,6 +61,9 @@
     <script>
         $('.select2').select2();
     </script>
+
+    <script type="text/javascript" src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"></script>
+
     @stack('scripts')
 </body>
 

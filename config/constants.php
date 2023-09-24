@@ -51,6 +51,32 @@ define('PERMISSIONS', [
         "parent_id" => 1
     ],
 
+    [
+        "name" => "Role list",
+        "url" => "role.list",
+        "parent_id" => 1
+    ],
+    [
+        "name" => "Create Role ",
+        "url" => "role.create",
+        "parent_id" => 1
+    ],
+    [
+        "name" => "Role Save",
+        "url" => "role.store",
+        "parent_id" => 1
+    ],
+    [
+        "name" => "Role Edit",
+        "url" => "role.edit",
+        "parent_id" => 1
+    ],
+    [
+        "name" => "Role Update",
+        "url" => "role.update",
+        "parent_id" => 1
+    ],
+
 
     [
         "name" => "Site Create Form",

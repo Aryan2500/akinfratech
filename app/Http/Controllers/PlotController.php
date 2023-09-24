@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Auth;
 class PlotController extends BaseController
 {
     //
-
     public function index()
     {
         $page_heading = 'Plots';
@@ -68,7 +67,7 @@ class PlotController extends BaseController
         $page_heading = "Update Plot";
 
         $layoutfor = $this->layoutfor;
-        return view('pages.admin.plot.edit', compact('plot', 'page_heading', 'blocks' ,'layoutfor'));
+        return view('pages.admin.plot.edit', compact('plot', 'page_heading', 'blocks', 'layoutfor'));
     }
     public function update(Request $req)
     {

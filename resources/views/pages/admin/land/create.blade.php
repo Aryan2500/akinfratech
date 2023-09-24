@@ -15,7 +15,6 @@
     </div>
 @endsection
 
-
 @push('scripts')
     <script src="{{ asset('assets/js/site-form-validator.js') }}"></script>
 @endpush
