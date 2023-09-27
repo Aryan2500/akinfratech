@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Responsive Bootstrap 5 admin dashboard template & web App ui kit.">
     <meta name="keyword" content="QBoat, Bootstrap 5, Admin Dashboard, Admin Theme">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.jpg" type="image/x-icon">
     <!--[ Favicon]-->
     <title> {{ env('APP_NAME') }} :: Sign In</title>
     <!--[ plugin css file  ]-->
@@ -32,7 +32,7 @@
                     <!--[ Start:: brand logo and name ]-->
                     <li class="brand-icon mb-3 border-0">
                         <a href="index.html">
-
+                            <img class="img-fluid top-0" src="assets/img/logo.png" alt="" srcset="" width="100" height="100">
                             <span class="fs-5 ms-2">{{ env('APP_NAME') }}</span>
                         </a>
 

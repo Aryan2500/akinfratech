@@ -18,6 +18,6 @@ class Farmer extends Model
 
     public function city()
     {
-        return $this->belongsTo(city::class, 'city_id');
+        return $this->belongsTo(City::class, 'city_id');
     }
 }

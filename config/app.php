@@ -3,7 +3,7 @@
 use App\Helpers\FarmerHelper;
 use App\Helpers\LocationHelper;
 use App\Helpers\PermissionHelper;
-use App\Helpers\PLotHelper;
+use App\Helpers\PlotHelper;
 use App\Helpers\SiteHelper;
 use App\Helpers\UserHelper;
 use Illuminate\Support\Facades\Facade;
